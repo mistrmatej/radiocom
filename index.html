@@ -1,850 +1,275 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radio v ČR – PMR446, sdílené kmitočty a kalkulačka dosahu</title>
-<meta name="description" content="Přehled o vysílačkách a radiostanicích v České republice: PMR446, sdílené kmitočty UHF/VHF, srovnání systémů, antény, baterie a interaktivní kalkulačka dosahu.">
-<meta name="theme-color" content="#0d1117">
-<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radiokom | přehled spojení</title>
+  <meta name="description" content="Interní přehled rádiové komunikace: PMR446, VHF, UHF, kanály a základní pravidla spojení.">
+  <meta name="theme-color" content="#121821">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <a class="skip" href="#obsah">Přejít na obsah</a>
 
-<a class="skip" href="#obsah">Přejít na obsah</a>
-
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="brand" href="#uvod">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-txt">Radiokom<strong>.cz</strong></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
-    <nav id="nav" class="nav" aria-label="Sekce">
-      <a href="#pmr446">PMR446</a>
-      <a href="#sdilenky">Sdílenky</a>
-      <a href="#srovnani">Srovnání</a>
-      <a href="#anteny">Antény</a>
-      <a href="#baterie">Baterie</a>
-      <a href="#kalkulacka" class="nav-cta">Kalkulačka dosahu</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-  </div>
-</header>
-
-<main id="obsah">
-
-<!-- ============ ÚVOD ============ -->
-<section id="uvod" class="hero">
-  <div class="wrap">
-    <p class="kicker">Česká republika · UHF 446 MHz · sdílené kmitočty 27–450 MHz</p>
-    <h1>Vysílačky a radiostanice v ČR</h1>
-    <p class="lead">
-      Přehled toho, co se v České republice dá vysílat <em>bez licence</em>, na jakých
-      kmitočtostech, s jakým výkonem a jak velký dosah z toho reálně vychází.
-      Na konci je <strong>interaktivní kalkulačka dosahu</strong> – zadej terén, anténu,
-      výkon a baterii a uvidíš dohled v kilometrech.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#kalkulacka">Spočítat dosah</a>
-      <a class="btn" href="#pmr446">Základy PMR446</a>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="#uvod" aria-label="Radiokom domů">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-txt">Radiokom</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav id="nav" class="nav" aria-label="Sekce">
+        <a href="#uvod">Start</a>
+        <a href="#postup">Jak funguje</a>
+        <a href="#kanaly">Kanály</a>
+        <a class="sos-nav-link" href="#sos">SOS</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="facts">
-      <div class="fact">
-        <span class="fact-num">500 mW</span>
-        <span class="fact-lab">max. vyzářený výkon PMR446 (e.r.p.)</span>
-      </div>
-      <div class="fact">
-        <span class="fact-num">16</span>
-        <span class="fact-lab">kanálů PMR446 (12,5 kHz)</span>
-      </div>
-      <div class="fact">
-        <span class="fact-num">0 Kč</span>
-        <span class="fact-lab">a žádná registrace – licence není potřeba</span>
-      </div>
-      <div class="fact">
-        <span class="fact-num">180 s</span>
-        <span class="fact-lab">max. délka jednoho vysílání (TOT)</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RYCHLE ============ -->
-<section class="section" aria-labelledby="h-rychle">
-  <div class="wrap">
-    <h2 id="h-rychle">Ve zkratce</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>PMR446</h3>
-        <p>UHF pásmo 446,0–446,2 MHz, 16 kanálů, FM 12,5 kHz i digitální (dPMR). Ruční
-        stanice s integrální anténou, 0,5 W e.r.p., simplex, jen hlas, TOT 180 s.
-        Ideální na výlet, do lesa, na stavbu.</p>
-      </article>
-      <article class="card">
-        <h3>Sdílené kmitočty</h3>
-        <p>Několik desítek ručně zvolených frekvencí v pásmech 27–450 MHz, kde smíš
-        vysílat 1 nebo 5 W e.r.p. <em>bez licence</em>, ale jen přenosnou stanicí.
-        Větší dohled než PMR446, méně lidí než na PMR.</p>
-      </article>
-      <article class="card">
-        <h3>DMR / C4FM / D-STAR</h3>
-        <p>Digitální a hybridní systémy s textovými zprávami, hlasáním, polohou a
-        prohozením Kanál/Role. U nás většinou v ham sítích a s <em>prostřednictvím
-        držitele koncese</em>.</p>
-      </article>
-      <article class="card">
-        <h3>CB pásmo 27 MHz</h3>
-        <p>40 kanálů FM/AM, 4 W, jednoduché a v Evropě jednotné kmitočtové rozestupy.
-        Na kopci dostaneš spojení i na stovky kilometrů.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PMR446 ============ -->
-<section id="pmr446" class="section section-alt" aria-labelledby="h-pmr">
-  <div class="wrap">
-    <p class="kicker">Základní pásmo</p>
-    <h2 id="h-pmr">PMR446</h2>
-
-    <div class="two-col">
-      <div>
-        <p>
-          <strong>PMR 446</strong> (Personal Mobile Radio) je označení pro občanské
-          radiostanice pracující v pásmu <strong>446,0–446,2 MHz</strong>. Pásmo bylo
-          v ČR uvolněno k provozu v roce 2001 a od 1. 1. 2018 je v celém úseku
-          446,0–446,2 MHz povoleno vysílání analogové i digitální modulaci.
-        </p>
-        <p>
-          Klíčová vlastnost: <strong>nepotřebuješ licenci, registraci ani hlášení</strong>.
-          Stačí koupit stanici splňující normu a dodržet několik podmínek. Proti tomu
-          je pásmo <em>podružné (sekundární)</em> – nesmíš rušit a nemáš ochranu
-          před rušením.
-        </p>
-        <h3>Pravidla v ČR</h3>
-        <p>Podmínky stanovuje <em>všeobecné oprávnění ČTÚ č. VO-R/3/6.2016-9</em>
-        (účinné od 1. 1. 2018):</p>
-        <ul class="check-list">
-          <li>Vyzářený výkon <strong>maximálně 500 mW e.r.p.</strong></li>
-          <li>Jen <strong>ruční přenosná stanice</strong> s <strong>integrální anténou</strong>
-              (pevně spojenou, nejde odšroubovat) – dualbandy s antenním konektorem nejsou povolené</li>
-          <li>Druh provozu: <strong>simplex, pouze hlasová komunikace</strong> (žádná data, žádné přemosťování hovorů)</li>
-          <li>Doba zaklíčování (<em>time-out timer</em>) <strong>maximálně 180 s</strong>, pak se musí znovu stisknout tlačítko vysílání</li>
-          <li>Stanici <strong>nesmíš elektricky ani mechanicky měnit</strong> (žádné zesilovače, převaděče, osazení konektoru)</li>
-          <li>Provoz <strong>není povolen ve vzduchu</strong> (letadla, drony) a v lodní dopravě</li>
-          <li>Kanál je <strong>sdílený</strong> – vysílat může v jednom okamžiku jen jedna stanice</li>
-        </ul>
-        <p class="note note-warn">
-          <strong>Častá chyba:</strong> přeprogramované čínské dualbandy (typ Baofeng
-          UV-5R a podobné) vysílají na jiných rozestupech a mají odnímatelnou anténu.
-          Používat je na pásmu PMR446 je v rozporu s podmínkami oprávnění, i když
-          nastavíš výkon 0,5 W.
-        </p>
-      </div>
-
-      <aside class="panel">
-        <h3>Kanály PMR446</h3>
-        <p class="panel-sub">16 kanálů, rozestup 12,5 kHz. Od 1. 1. 2018 lze oba kmitočtové
-        úseky použít pro analogovou i digitální modulaci.</p>
-        <div class="table-wrap">
-          <table class="chan-table" id="pmr-channels">
-            <thead>
-              <tr><th>Kanál</th><th>Analog FM (MHz)</th><th>Digitální dPMR (MHz)</th></tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <p class="small">
-          Digitální modulace může používat i rozestup 6,25 kHz se středem 1. kanálu
-          446,103125 MHz. Prakticky se ale používá 12,5 kHz, protože to umí běžné
-          dPMR/DMR stanice.
-        </p>
-      </aside>
-    </div>
-
-    <h3>Co všechno umí typická PMR stanice</h3>
-    <div class="cards cards-3">
-      <article class="card card-sm">
-        <h4>CTCSS a DCS</h4>
-        <p>„Brána“ otevře příjem jen při správném tónovém kódu. Umožní mít v jednom
-        kanále desítky dvojic, které se navzájem neruší.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>Monitor / Squelch</h4>
-        <p>Poslech kanálu bez vysílání. Základ slušnosti: nejdřív si poslechni,
-        jestli tam někdo nehovoří.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>VOX</h4>
-        <p>Automatické vysílání po detekci hlasu. Užitečné při jízdě, ale v citlivých
-        prostředích umí vadit.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>Digitální hlas</h4>
-        <p>dPMR/DMR v pásmu PMR446 – lepší využití kanálu, dva hlasové kanály v jednom
-        (timesloty) a skupinové hovory.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>Krátká anténa</h4>
-        <p>U „gumové“ antény je zisk kolem 0 dBd a účinnost mívá pod 10 %. Rozdíl
-        je poznat hned, ale proti ztrátám v terénu nic nezmůže.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>Time-out</h4>
-        <p>Hardwarový časovač vybaví po 180 s. Nutnost, ne vlastnost – bez něj
-        stanice nesmí na pásmu vysílat.</p>
-      </article>
-    </div>
-
-    <h3>Reálný dosah na PMR446</h3>
-    <p>
-      Výkon 0,5 W je malý, ale na kratší vzdálenosti se projeví jen jako menší
-      rezerva. Rozhoduje hlavně výška antén a reliéf terénu.
-    </p>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Situace</th><th>Orientacní dohled</th><th>Co to ovlivňuje</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Husté město, oba v ulici</td><td>0,3 – 1,5 km</td><td>Budovy, lidé, kovové konstrukce, úzké uličky</td></tr>
-          <tr><td>Město, parky a vyšší domy</td><td>1 – 3 km</td><td>Zahlazený reliéf, antény nad střechami</td></tr>
-          <tr><td>Předměstí, vesnice</td><td>3 – 8 km</td><td>Rozptýlená zástavba, volná obloha</td></tr>
-          <tr><td>Otevřená krajina</td><td>5 – 15 km</td><td>Přímá viditelnost, minimum překážek</td></tr>
-          <tr><td>Les, lesnatá krajina</td><td>1 – 4 km</td><td>Stromy pohlcují, hlavně na VHF</td></tr>
-          <tr><td>Kopec a vyvýšené místo</td><td>20 – 60 km</td><td>Výška antén je důležitější než výkon</td></tr>
-          <tr><td>Vrchol na vrchol (extrémní DX)</td><td>50 – 200 km</td><td>Dva dobře volené vrcholy v přímém směru</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="small">
-      Pravidlo z praxe: <strong>„Kam dohlédneš, tam se dovoláš.“</strong> Výkon navíc
-      se vyplatí mnohem méně než výška antény.
-    </p>
-  </div>
-</section>
-
-<!-- ============ SDÍLENKY ============ -->
-<section id="sdilenky" class="section" aria-labelledby="h-sdil">
-  <div class="wrap">
-    <p class="kicker">Všeobecné oprávnění VO-R/16</p>
-    <h2 id="h-sdil">Sdílené kmitočty UHF / VHF</h2>
-    <p class="lead-sm">
-      Kromě PMR446 existuje v ČR ještě jeden okruh kmitočtot, na kterých smíš
-      vysílat <strong>bez licence a bez registrace</strong>, a to s výkonem
-      <strong>1 nebo 5 W e.r.p.</strong> – tedy desetkrát víc než PMR446.
-      V praxi se jim říká „sdílák“, „sdílenky“ nebo „svobodné kmitočty“.
-      Jde o tzv. <em>stanice provozované společně na určených kmitočtech</em>.
-    </p>
-
-    <div class="grid-2">
-      <div class="panel">
-        <h3>Kmitočtové úseky pro hlas</h3>
-        <div class="table-wrap">
-          <table class="freq-table">
-            <thead>
-              <tr><th>Kmitočty</th><th>Pásmo</th><th>Max. e.r.p.</th><th>Šířka</th></tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>172,650 · 172,950 · 172,975 MHz</td><td>VHF</td>
-                <td class="ok">5 W</td><td>10 kHz</td>
-              </tr>
-              <tr>
-                <td>172,725 · 173,050 MHz</td><td>VHF</td>
-                <td class="ok">1 W</td><td>10 kHz</td>
-              </tr>
-              <tr>
-                <td>442,200 · 442,225 · 442,250 · 442,275 MHz</td><td>UHF</td>
-                <td class="ok">5 W</td><td>16 kHz</td>
-              </tr>
-              <tr>
-                <td>448,490 · 448,570 · 448,610 MHz</td><td>UHF</td>
-                <td class="ok">5 W</td><td>14 kHz</td>
-              </tr>
-              <tr>
-                <td>449,770 · 449,810 MHz</td><td>UHF</td>
-                <td class="ok">1 W</td><td>14 kHz</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="small">
-          Podmínky: všeobecné oprávnění č. <strong>VO-R/16/05.2020-6</strong>
-          k využívání rádiových kmitočtů a k provozování zařízení provozovaných
-          společně na určených kmitočtostech v pásmech 27 MHz až 450 MHz.
-        </p>
-      </div>
-
-      <div class="panel">
-        <h3>Podmínky provozu</h3>
-        <ul class="check-list">
-          <li><strong>Bez individuálního oprávnění</strong> – neřešíš žádnou žádost ani podání</li>
-          <li>Stanice se <strong>nesmí měnit</strong> a nesmí mít přídavný zesilovač
-              vysokofrekvenčního výkonu ani převaděče</li>
-          <li>Stanice se <strong>nesmí připojit k veřejné komunikační síti</strong>
-              a nesmí se používat k poskytování služeb elektronických komunikací</li>
-          <li>Provoz <strong>pouze jako přenosná stanice</strong> – ne jako pevně
-              zabudovaná v objektu nebo ve vozidle</li>
-          <li><strong>Závěsné a pevné antény nejsou povolené</strong> – anténa musí
-              součástí přenosné stanice</li>
-          <li>Provoz v pásmu <strong>172,xxx MHz není povolen v oblastech příjmu
-              televizního vysílání na 6. TV kanálu</strong></li>
-          <li>Nemáš ochranu proti rušení – dohoda se řeší jen dohodou</li>
-        </ul>
-        <p class="note">
-          Výkon se počítá jako <strong>vyzářený výkon (e.r.p.)</strong>, tedy včetně
-          zisku antény. Anténa s 2 dBd ziskem a výkon 5 W už překračuje limit.
-        </p>
-      </div>
-    </div>
-
-    <h3>Jak na to v praxi</h3>
-    <div class="cards cards-3">
-      <article class="card card-sm">
-        <h4>1. Vyber správnou frekvenci</h4>
-        <p>Na UHF je provoz přeceňovaný méně a je tam méně lidí než na PMR.
-        Na VHF dosáhneš dál, ale pozor na úzké pásmo.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>2. Nastav úzké pásmo</h4>
-        <p>Tady je past: na 172 MHz je povoleno jen <strong>10 kHz</strong>,
-        na 448 MHz <strong>14 kHz</strong>, na 442 MHz <strong>16 kHz</strong>.
-        Běžné FM stanice mívají 12,5 nebo 25 kHz.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>3. Zkontroluj výkon</h4>
-        <p>5 W e.r.p. je včetně zisku antény. S „gumovou“ anténnou (0 dBd) je to
-        v pořádku, s delší anténou musíš výkon snížit.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>4. Neměř výkon v protisměru</h4>
-        <p>Trajektorie je obrácená: proto je dohled na 172 MHz výrazně delší
-        než na 448 MHz při stejném výkonu.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>5. Nepoužívej z pevného místa</h4>
-        <p>Stanice musí být přenosná. Anténa na střeše, stožáru nebo v okně
-        s nížší vložkou je mimo podmínky oprávnění.</p>
-      </article>
-      <article class="card card-sm">
-        <h4>6. Kamarádství nekončí u pásma</h4>
-        <p>Sdílák je dobrý trenažér. Když ti to sedne, další krok je zkouška
-        operátora a vlastní značka.</p>
-      </article>
-    </div>
-
-    <p class="note note-warn">
-      <strong>Pozor na rozdíl kmitočtů:</strong> sdílené kmitočty nejsou v harmonizované
-      normě EN 300 113 pro PMR, ale vyhláška i oprávnění určují šířku kanálu a druh
-      modulace. Zařízení musí vyzařovat jen v povolené šířce – jinak jde o rušení
-      ostatních uživatelů, kteří oprávnění dodržují.
-    </p>
-  </div>
-</section>
-
-<!-- ============ SRovNÁNÍ ============ -->
-<section id="srovnani" class="section section-alt" aria-labelledby="h-srov">
-  <div class="wrap">
-    <p class="kicker">Co vybrat</p>
-    <h2 id="h-srov">Srovnání systémů v ČR</h2>
-    <div class="table-wrap">
-      <table class="compare">
-        <thead>
-          <tr>
-            <th>Systém</th><th>Pásmo</th><th>Výkon</th><th>Provoz</th><th>Licence</th><th>Pro koho</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>PMR446</strong></td>
-            <td>446,0–446,2 MHz</td>
-            <td>0,5 W e.r.p.</td>
-            <td>analog FM i digitální, simplex, jen hlas</td>
-            <td class="ok">ne</td>
-            <td>Výlet, les, stavba, rodina. Nejmenší administrativní náročnost.</td>
-          </tr>
-          <tr>
-            <td><strong>Sdílené kmitočty</strong></td>
-            <td>172 / 442 / 448 / 449 MHz</td>
-            <td>1 nebo 5 W e.r.p.</td>
-            <td>přenosná stanice, FM i digitální</td>
-            <td class="ok">ne</td>
-            <td>Kdo chce delší dohled a umí hlídat šířku kanálu.</td>
-          </tr>
-          <tr>
-            <td><strong>CB</strong></td>
-            <td>27 MHz, 40 kanálů</td>
-            <td>4 W FM / AM, 12 W SSB</td>
-            <td>jednosměrné i přemosťování</td>
-            <td class="ok">ne</td>
-            <td>Tradiční komunitní provoz, dobré DX na 11 m.</td>
-          </tr>
-          <tr>
-            <td><strong>DMR (Tier II)</strong></td>
-            <td>438–440 MHz</td>
-            <td>typicky 25 W u repeateru</td>
-            <td>dvě timesloty, text, poloha, hlasání</td>
-            <td>ano (věcnými prostředky lze i bez, ale provoz mimo oprávnění není v pořádku)</td>
-            <td>Komunita, která chce funkce sítě a provázanost s dalšími.</td>
-          </tr>
-          <tr>
-            <td><strong>C4FM / dPMR / YSOP</strong></td>
-            <td>UHF i VHF</td>
-            <td>dle stanice</td>
-            <td>kanál/role, přenos dat</td>
-            <td>dle kmitočtu</td>
-            <td>Kdo chce digitální hlas bez licence nebo v rámci sítě.</td>
-          </tr>
-          <tr>
-            <td><strong>Radioamatér</strong></td>
-            <td>od 30 kHz do 1300 MHz</td>
-            <td>od 25 W do stovek wattů</td>
-            <td>široká škála módů, vysílání značky</td>
-            <td>zkouška operátora</td>
-            <td>Komunita, experimentování, dálkové spoje.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="small">
-      Tabulka je orientační. Před použitím konkrétní kmitočtu ověř aktuální znění
-      všeobecného oprávnění nebo individuálního oprávnění na webu
-      <a href="https://ctu.gov.cz/vseobecna-opravneni" rel="noopener">ČTÚ</a>.
-    </p>
-  </div>
-</section>
-
-<!-- ============ ANTÉNY ============ -->
-<section id="anteny" class="section" aria-labelledby="h-ant">
-  <div class="wrap">
-    <p class="kicker">Nejdůležitější parametr</p>
-    <h2 id="h-ant">Antény a výška</h2>
-    <p class="lead-sm">
-      Zisk antény v decibelech a výška antény nad terénem jsou dva nejlevnější
-      „upgrade“, které v rádiu vůbec existují. Obojí je přitom podstatnější
-      než přechod z 0,5 W na 5 W.
-    </p>
-
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Anténa</th><th>Zisk</th><th>Použití</th><th>Poznámka</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Gumová (integrovaná)</td><td>≈ 0 dBd</td><td>Ruční PMR, mobilní</td>
-              <td>Účinnost často 5–15 %. Víc nedostaneš, je to součást normy.</td></tr>
-          <tr><td>λ/4 whip (34 cm na 446 MHz)</td><td>≈ +1,5 dBd</td><td>Přenosné FM/DMR</td>
-              <td>Levný a větší zisk než gumová. Musí být vyzářena celá.</td></tr>
-          <tr><td>5/8 vlnová na střeše</td><td>≈ +3 dBd</td><td>Stacionární, auto</td>
-              <td>Klasika pro 172 a 448 MHz. Pozor na výkonový limit e.r.p.</td></tr>
-          <tr><td>Směrová Yagi</td><td>+6 až +12 dBd</td><td>Směrové spoje</td>
-              <td>Na sdílénkách legální, jen sníž výkon podle zisku.</td></tr>
-          <tr><td>Basová anténa</td><td>od +2 dBd</td><td>Domácí stanice</td>
-              <td>Výrazně zlepší pokrytí dovnitř budovy.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="grid-2">
-      <div>
-        <h3>Výška je důležitější než výkon</h3>
-        <p>
-          Vzdálenost, na kterou je vidět vlastní anténa nad obzorem, roste s
-          odmocninou výšky. Anténa ve výšce 2 m „vidí“ přibližně 4 km daleko,
-          ve výšce 20 m už asi 18 km a ve výšce 50 m přes 29 km. Rozdíl mezi
-          ruční stanicí a stanicí na 20m kopci je tedy obrovský – a vyjde
-          úplně zadarmo.
-        </p>
-        <p>
-          Druhý důležitý detail: <strong>anténa musí být vystavena</strong>.
-          V kapse za dveřmi automobilu, za železobetonem nebo u země na zemi
-          ztratí i dobře nastavenou stanici.
-        </p>
-      </div>
-      <div>
-        <h3>Pravidla, která šetří nervy i baterii</h3>
-        <ul class="check-list">
-          <li>Vysílej jen stručně, opakuj zprávu místo dlouhého monologu</li>
-          <li>Před vysíláním použij <strong>monitor</strong> – neber si volný kanál</li>
-          <li>Kanál s kódem je doporučení, ne zákon – bez kódu slyšíš všechny</li>
-          <li>Do hovoru vstupuj až v pauze, ideálně s „přerušuji“</li>
-          <li>Konec relace oznam lodiadkou, ne zatažením triggeru</li>
-          <li>Na sdílénkách a PMR nevyvolávej dlouhé spory – kmitočtu je málo</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BATERIE ============ -->
-<section id="baterie" class="section section-alt" aria-labelledby="h-bat">
-  <div class="wrap">
-    <p class="kicker">Napájení</p>
-    <h2 id="h-bat">Baterie a napájení</h2>
-    <div class="cards cards-3">
-      <article class="card">
-        <h4>Li-ion (3,7 V)</h4>
-        <p>Nejmenší a nejlehčí, vysoká kapacita na kilogram. Vadí vyšší
-        samovybíjení a obvykle žádný „memory effect“. Nabíječka obvykle nabíjí
-        samotnou baterii nebo zařízení přes micro-USB.</p>
-      </article>
-      <article class="card">
-        <h4>NiMH</h4>
-        <p>Větší objem, ale snese přibližně tisíc cyklů. Typická 4,8 V sada
-        do starších stanic a napáječek. Praktická pro stanice s výměnnou
-        baterií.</p>
-      </article>
-      <article class="card">
-        <h4>Proč baterie mění dosah</h4>
-        <p>Při vyšším vybitém stavu klesá koncový stupeň výkonu a zkracuje se
-        doba vysílání. U baterií typických pro těžší ruční stanice je pokles
-        výkonu při vybití výrazný – projeví se to přímo na dohledu.</p>
-      </article>
-      <article class="card">
-        <h4>Nabíjení</h4>
-        <p>Li-ion nedobíjej do 100 % a nenechávej dlouho úplně vybité. Když během
-        výletu nabíjíš, drž baterii mimo pažnák a USB adaptér.</p>
-      </article>
-      <article class="card">
-        <h4>Používání ve stanici</h4>
-        <p>Na přenosnou stanici není potřeba baterie vybíjet do hloubky pro
-        paměť kalibračních kanálů (kalibrace je zápis do paměti zařízení,
-        ne do baterie).</p>
-      </article>
-      <article class="card">
-        <h4>Power bank</h4>
-        <p>Na delší výlet se hodí malá power banka. Na UHF s ní počítej jako
-        s prodloužením provozu, ne jako se zdvojnásobením výkonu.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ KALKULAČKA ============ -->
-<section id="kalkulacka" class="section section-calc" aria-labelledby="h-calc">
-  <div class="wrap">
-    <p class="kicker">Nástroj</p>
-    <h2 id="h-calc">Interaktivní kalkulačka dosahu</h2>
-    <p class="lead-sm">
-      Zadej pásmo, výkon, antény, výšky nad terénem a terén. Kalkulačka spočítá
-      ztrátový rozpočet po jednotlivých složkách a odhadne dohled. Výsledek je
-      <strong>odhad pro přímou rádiovou viditelnost</strong> – terénní reliéf
-      a překážky započítat přesně neumí, proto je k dispozici posuvník ztrát
-      v trase.
-    </p>
-
-    <div class="presets" role="group" aria-label="Rychlé předvolby">
-      <span class="presets-label">Rychlé předvolby:</span>
-      <button class="chip" type="button" data-preset="pmr-mesto">PMR446 ve městě</button>
-      <button class="chip" type="button" data-preset="pmr-krajina">PMR446 v krajině</button>
-      <button class="chip" type="button" data-preset="sdil-uhf">Sdílenka UHF v lese</button>
-      <button class="chip" type="button" data-preset="sdil-vhf">Sdílenka VHF 172 MHz</button>
-      <button class="chip" type="button" data-preset="hora">Dvě antény na kopcích</button>
-      <button class="chip" type="button" data-preset="auto">Dvě auta na trase</button>
-    </div>
-
-    <form class="calc" id="calc" novalidate>
-      <div class="calc-grid">
-
-        <!-- Zařízení A -->
-        <fieldset class="calc-set">
-          <legend>Moje stanice</legend>
-
-          <div class="field">
-            <label for="f-banda">Pásmo / frekvence</label>
-            <select id="f-banda" name="banda">
-              <option value="446.1">PMR446 – 446 MHz</option>
-              <option value="172.65">Sdílenka VHF – 172,65 MHz</option>
-              <option value="173.05">Sdílenka VHF – 173,05 MHz (1 W)</option>
-              <option value="442.2">Sdílenka UHF – 442,2 MHz</option>
-              <option value="448.49">Sdílenka UHF – 448,49 MHz</option>
-              <option value="449.77">Sdílenka UHF – 449,77 MHz (1 W)</option>
-              <option value="438.5">Ham DMR – 438,5 MHz</option>
-              <option value="145.5">Ham 2 m – 145,5 MHz</option>
-              <option value="custom">Vlastní frekvence…</option>
-            </select>
-          </div>
-
-          <div class="field" id="f-custom-wrap" hidden>
-            <label for="f-custom">Frekvence (MHz)</label>
-            <input type="number" id="f-custom" min="26" max="1300" step="0.0125" value="446.1">
-          </div>
-
-          <div class="field">
-            <label for="f-vykon">Výkon vysílačky <span class="hint" id="vykon-hint"></span></label>
-            <select id="f-vykon" name="vykon"></select>
-          </div>
-
-          <div class="field">
-            <label for="f-baterie">Stav baterie</label>
-            <select id="f-baterie" name="baterie"></select>
-            <p class="field-note" id="baterie-note"></p>
-          </div>
-
-          <div class="field">
-            <label for="f-antena">Anténa</label>
-            <select id="f-antena" name="antena"></select>
-          </div>
-
-          <div class="field">
-            <label for="f-vyska">Výška antény nad terénem <span class="hint" id="vyska-a-val"></span></label>
-            <input type="range" id="f-vyska" name="vyskaA" min="0.5" max="150" step="0.5" value="1.5">
-            <div class="quick-heights">
-              <button type="button" data-h="1.5">ruční 1,5 m</button>
-              <button type="button" data-h="2">auto 2 m</button>
-              <button type="button" data-h="10">stožár 10 m</button>
-              <button type="button" data-h="25">věž 25 m</button>
-              <button type="button" data-h="50">rozhledna 50 m</button>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- Zařízení B -->
-        <fieldset class="calc-set">
-          <legend>Protistanice</legend>
-
-          <label class="check">
-            <input type="checkbox" id="f-zrcadlo" checked>
-            <span>Zrcadlit nastavení moje stanice</span>
-          </label>
-
-          <div class="mirror-group" data-mirror>
-            <div class="field">
-              <label for="f-b-vykon">Výkon vysílačky <span class="hint" id="b-vykon-hint"></span></label>
-              <select id="f-b-vykon" name="vykonB"></select>
-            </div>
-            <div class="field">
-              <label for="f-b-antena">Anténa</label>
-              <select id="f-b-antena" name="antenaB"></select>
-            </div>
-            <div class="field">
-              <label for="f-b-vyska">Výška antény nad terénem <span class="hint" id="vyska-b-val"></span></label>
-              <input type="range" id="f-b-vyska" name="vyskaB" min="0.5" max="150" step="0.5" value="1.5">
-            </div>
-          </div>
-
-          <p class="field-note">
-            Výkon protistanice vstupuje do výpočtu přes slabší ze dvou směrů –
-            rozhoduje směr, ve kterém musí tvoje stanice slyšet cizí.
-          </p>
-        </fieldset>
-
-        <!-- Prostředí -->
-        <fieldset class="calc-set">
-          <legend>Prostředí</legend>
-
-          <div class="field">
-            <label for="f-teren">Terén</label>
-            <select id="f-teren" name="teren"></select>
-            <p class="field-note" id="teren-note"></p>
-          </div>
-
-          <div class="field">
-            <label for="f-citlivost">Citlivost přijímače</label>
-            <select id="f-citlivost" name="citlivost"></select>
-            <p class="field-note">
-              Ruční stanice v lese nebo ve městě chytají méně – vyber hodnotu
-              bližší realitě, ne podle štítku na krabici.
+  <main id="obsah">
+    <section id="uvod" class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">Interní přehled</p>
+            <h1>Rádiové spojení</h1>
+            <p class="lead">
+              Kanály a frekvence, které používáme. Nastavte stejné pásmo a kanál jako ostatní.
             </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kanaly">Najít kanál</a>
+            <a class="btn btn-ghost" href="#postup">Jak to funguje</a>
           </div>
+        </div>
 
-          <div class="field">
-            <label for="f-extra">Překážky v přímé spojnici <span class="hint" id="extra-val">0 dB</span></label>
-            <input type="range" id="f-extra" name="extra" min="0" max="30" step="1" value="0">
-            <p class="field-note">
-              Ztráta, kterou model nepočítá: terénní nerovnosti, kopce v trase,
-              stromy, budovy, vlhký les. 0 dB = čistá přímá viditelnost.
-            </p>
+        <aside class="hero-panel panel">
+          <div class="hero-panel-head">
+            <h2>Kam dál?</h2>
           </div>
-        </fieldset>
+          <a class="quick-link quick-link-pmr" href="#pmr446">
+            <span><strong>PMR446</strong><small>Nejjednodušší běžné spojení</small></span>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="quick-link quick-link-uhf" href="#uhf">
+            <span><strong>UHF</strong><small>Město, budovy a areály</small></span>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="quick-link quick-link-vhf" href="#vhf">
+            <span><strong>VHF</strong><small>Les, louka a otevřený terén</small></span>
+            <b aria-hidden="true">→</b>
+          </a>
+          <a class="quick-link quick-link-sos" href="#sos">
+            <span><strong>SOS</strong><small>Postup při nouzové situaci</small></span>
+            <b aria-hidden="true">→</b>
+          </a>
+        </aside>
+      </div>
+    </section>
 
-        <!-- Výsledek -->
-        <div class="calc-result">
-          <div class="result-main">
-            <p class="result-label">Odhadovaný dohled</p>
-            <p class="result-value"><span id="r-drah">–</span></p>
-            <p class="result-sub" id="r-drah-sub"></p>
-          </div>
+    <section id="postup" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Rozjezd</p>
+          <h2>Jak se připojit za pár minut</h2>
+        </div>
 
-          <div class="result-side">
-            <p class="rs-item"><span>Spolehlivý hovor (+10 dB rezerva)</span><strong id="r-robust">–</strong></p>
-            <p class="rs-item"><span>Rádiový horizont (Země 4/3)</span><strong id="r-horizon">–</strong></p>
-            <p class="rs-item"><span>Vyzařený výkon A (e.r.p.)</span><strong id="r-eirp">–</strong></p>
-            <p class="rs-item"><span>Výškový zisk antén</span><strong id="r-gh">–</strong></p>
-          </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">1</span>
+            <h3>Nastavit vhodné rádio</h3>
+            <p>Použijte rádio, které podporuje pásmo, na kterém se chcete spojit. U PMR446 musí jít o vhodnou PMR446 stanici.</p>
+          </article>
 
-          <div class="legal" id="r-legal"></div>
+          <article class="step">
+            <span class="step-number">2</span>
+            <h3>Domluvit kanál</h3>
+            <p>Všichni používají stejný kanál a případně stejný tón. Potom se domluvíte jednou a máte hotovo.</p>
+          </article>
 
-          <div class="chart-wrap">
-            <h3>Úbytek signálu s vzdáleností</h3>
-            <svg id="chart" viewBox="0 0 640 300" role="img"
-                 aria-label="Graf úbytku signálu s vzdáleností">
-              <g id="chart-body"></g>
-            </svg>
-            <p class="small" id="chart-desc"></p>
-          </div>
+          <article class="step">
+            <span class="step-number">3</span>
+            <h3>Poslechnout a mluvit</h3>
+            <p>Nejprve zkontrolujte, jestli je kanál volný. Potom krátce a srozumitelně vysílejte.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          <details class="breakdown">
-            <summary>Rozpočet spoje</summary>
+    <section id="kanaly" class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Kanály</p>
+          <h2>Společné frekvence</h2>
+          <p class="lead-sm">Použijte stejné pásmo, kanál a tón jako ostatní.</p>
+        </div>
+        <div class="channels-grid">
+          <article id="pmr446" class="panel channel-panel">
+            <h3>PMR446</h3>
+            <p class="panel-sub">16 kanálů</p>
+            <div class="pmr-grid" id="pmr-panel" data-band-panel="pmr">
+              <div class="table-wrap">
+                <table class="chan-table band-table" id="pmr-channel-table">
+                  <thead>
+                    <tr>
+                      <th>Kanál</th><th>Frekvence (MHz)</th>
+                      <th>Kanál</th><th>Frekvence (MHz)</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+          <article id="uhf" class="panel channel-panel">
+            <h3>UHF</h3>
+            <p class="panel-sub">9 kanálů</p>
             <div class="table-wrap">
-              <table id="r-table">
-                <tbody></tbody>
+              <table class="chan-table band-table" id="uhf-panel" data-band-panel="uhf">
+              <thead>
+                <tr><th>Kanál</th><th>Frekvence</th><th>Max. výkon</th></tr>
+              </thead>
+              <tbody></tbody>
               </table>
             </div>
-          </details>
-
-          <p class="small calc-note">
-            Model kombinuje ztrátu volného prostoru, ztráty podle exponentu šíření v daném
-            terénu, difrakci nad ohybem Země a ztráty, které zadáš sám. Parametry terénu
-            jsou kalibrované na běžně pozorované dosahy v ČR, ne odvozené z univerzálního
-            teoretického modelu. Výškový profil terénu neumí zpracovat, proto může být
-            výsledek ve složitém reliéfu příliš optimistický — na řece, v zástavbě nebo
-            v kopcích počítej rezervu. Výstup je <strong>odhad pro plánování</strong>,
-            ne garantovaný dosah.
-          </p>
+          </article>
+          <article id="vhf" class="panel channel-panel">
+            <h3>VHF</h3>
+            <p class="panel-sub">5 kanálů</p>
+            <div class="table-wrap">
+              <table class="chan-table band-table" id="vhf-panel" data-band-panel="vhf">
+              <thead>
+                <tr><th>Kanál</th><th>Frekvence</th><th>Max. výkon</th></tr>
+              </thead>
+              <tbody></tbody>
+              </table>
+            </div>
+          </article>
         </div>
       </div>
-    </form>
-  </div>
-</section>
+    </section>
 
-<!-- ============ FAQ ============ -->
-<section id="faq" class="section section-alt" aria-labelledby="h-faq">
-  <div class="wrap">
-    <p class="kicker">Časté otázky</p>
-    <h2 id="h-faq">FAQ</h2>
+    <section class="section band-guide" aria-labelledby="band-guide-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Jednoduše řečeno</p>
+          <h2 id="band-guide-title">VHF nebo UHF?</h2>
+        </div>
+        <div class="band-visual" aria-label="Porovnání rádiových pásem">
+          <article class="band-card band-card-pmr">
+            <div class="band-icon band-icon-people" aria-hidden="true">
+              <svg viewBox="0 0 160 100" role="presentation">
+                <circle cx="38" cy="27" r="11"></circle>
+                <path d="M18 76c2-22 11-33 20-33s18 11 20 33"></path>
+                <circle cx="122" cy="27" r="11"></circle>
+                <path d="M102 76c2-22 11-33 20-33s18 11 20 33"></path>
+                <rect x="62" y="35" width="36" height="45" rx="6"></rect>
+                <line x1="72" y1="27" x2="78" y2="35"></line>
+                <circle cx="73" cy="47" r="3"></circle>
+                <line x1="82" y1="47" x2="91" y2="47"></line>
+                <line x1="70" y1="58" x2="90" y2="58"></line>
+              </svg>
+            </div>
+            <span class="band-label">PMR446</span>
+            <h3>Nejjednodušší volba</h3>
+            <p>Pro tým, rodinu, výlet nebo krátké spojení. Bez licence, s výkonem do 0,5 W.</p>
+            <strong class="band-use">Běžné použití</strong>
+          </article>
+          <article class="band-card band-card-vhf">
+            <div class="band-icon band-icon-forest" aria-hidden="true">
+              <svg viewBox="0 0 160 100" role="presentation">
+                <path d="M8 82h144"></path>
+                <path d="M35 82V50"></path>
+                <path d="M35 24 16 55h12L12 76h46L42 55h12z"></path>
+                <path d="M108 82V42"></path>
+                <path d="m108 12-22 35h14L78 73h60l-22-26h14z"></path>
+              </svg>
+            </div>
+            <span class="band-label">VHF</span>
+            <h3>Otevřená krajina</h3>
+            <p>Nižší frekvence se obvykle hodí více ven, kde je mezi rádii méně překážek.</p>
+            <strong class="band-use">Výlet · louka · terén</strong>
+          </article>
+          <article class="band-card band-card-uhf">
+            <div class="band-icon band-icon-city" aria-hidden="true">
+              <svg viewBox="0 0 160 100" role="presentation">
+                <path d="M10 82h140"></path>
+                <path d="M20 82V48h30v34"></path>
+                <path d="M62 82V20h36v62"></path>
+                <path d="M110 82V38h31v44"></path>
+                <path d="M28 59h14M28 69h14M73 34h14M73 46h14M73 58h14M73 70h14M118 51h15M118 63h15M118 75h15"></path>
+              </svg>
+            </div>
+            <span class="band-label">UHF</span>
+            <h3>Město a budovy</h3>
+            <p>Vyšší frekvence se často hodí do zastavěného prostředí a pro běžné nošení.</p>
+            <strong class="band-use">Město · budova · areál</strong>
+          </article>
+        </div>
+        <p class="band-note">Pásma spolu přímo nekomunikují. Všichni musí mít stejné pásmo, frekvenci i tón.</p>
+      </div>
+    </section>
 
-    <details class="faq">
-      <summary>Potřebuju na PMR446 licenci nebo hlásit stanici?</summary>
-      <p>Ne. Provoz je stanoven všeobecným oprávněním ČTÚ, které za určitých
-      podmínek nahrazuje individuální oprávnění. Nemusíš nic nakupovat ani
-      registrovat. Podmínkou je dodržet technické parametry stanice.</p>
-    </details>
+    <section id="sos" class="section sos-section" aria-labelledby="sos-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker sos-kicker">Stav nouze</p>
+          <h2 id="sos-title">SOS: mluvte stručně a zřetelně</h2>
+          <p class="lead-sm">Rádio pomůže předat zprávu ostatním. Pokud je ohrožený život nebo zdraví, vždy volejte také <strong>112</strong>.</p>
+        </div>
 
-    <details class="faq">
-      <summary>Můžu na PMR446 přeprogramovat libovolnou vysílačku?</summary>
-      <p>Ne. Na tomto pásmu smíš používat stanice určené pro PMR446 – s integrální
-      anténou a s odpovídající normou. Dualbandy s antenním konektorem, i když
-      naprogramované na správnou frekvenci, podmínkám nevyhovují.</p>
-    </details>
+        <div class="sos-layout">
+          <div class="sos-steps">
+            <article class="sos-step">
+              <span class="sos-number">1</span>
+              <div>
+                <h3>Zkontrolujte bezpečí</h3>
+                <p>Nejdřív se dostaňte mimo bezprostřední nebezpečí, pokud to situace dovolí. Nezdržujte se dlouhým vysvětlováním.</p>
+              </div>
+            </article>
+            <article class="sos-step">
+              <span class="sos-number">2</span>
+              <div>
+                <h3>Nalaďte správný kanál</h3>
+                <p>Použijte kanál domluvený pro naši skupinu. PMR446 nemá jeden univerzální SOS kanál, proto se nespoléhejte na náhodně zvolený kanál.</p>
+              </div>
+            </article>
+            <article class="sos-step">
+              <span class="sos-number">3</span>
+              <div>
+                <h3>Řekněte to v tomto pořadí</h3>
+                <p><strong>SOS, SOS, SOS</strong> — kdo volá — kde jste — co se stalo — kolik lidí potřebuje pomoc — co potřebujete.</p>
+              </div>
+            </article>
+            <article class="sos-step">
+              <span class="sos-number">4</span>
+              <div>
+                <h3>Čekejte na potvrzení</h3>
+                <p>Po hlášení poslouchejte, odpovídejte stručně a zůstaňte na místě, pokud je to bezpečné. Šetřete baterii i čas vysílání.</p>
+              </div>
+            </article>
+          </div>
 
-    <details class="faq">
-      <summary>Co je to duplex a proč se nepoužívá?</summary>
-      <p>Duplex by znamenal, že dvě stanice vysílají současně na dvou různých
-      frekvencích a vytvářejí tak „vysílací kanál“. Na pásmu PMR446 je povolena
-      výhradně simplexní (všichni jedou na stejné frekvenci) komunikace.</p>
-    </details>
+          <aside class="sos-card panel">
+            <span class="sos-badge">Hlášení SOS</span>
+            <h3>„SOS, SOS, SOS. Tady [jméno].“</h3>
+            <p>„Jsme na [místo / orientační bod]. Stalo se [co]. Pomoc potřebuje [počet] lidí. Potřebujeme [co].“</p>
+            <div class="sos-callout">
+              <strong>112</strong>
+              <span>Jednotné evropské číslo tísňového volání</span>
+            </div>
+            <p class="sos-small">Rádiem si přivoláte pozornost skupiny. Záchranné složky kontaktujte telefonem, kdykoli je to možné.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <details class="faq">
-      <summary>Je sdílených kmitočtot dostupných pro každého?</summary>
-      <p>Ano, bez licence a bez registrace. Podmínkou je mobilní charakter
-      stanice, pevně zabudované antény se nesmějí používat. Některé stanice sice
-      fyzicky leží na pevné stanici, podmínka ale říká, že nesmí být
-      <em>pevně zabudované v objektu</em>.</p>
-    </details>
-
-    <details class="faq">
-      <summary>Jak poznám, že moje vysílačka je v pořádku?</summary>
-      <p>Podle prohlášení o shodě (značka CE) a českého návodu k použití, který
-      musí být přiložen ke každému zařízení. V návodu musí být uveden
-      doporučený výkon a přípustný typ antény.</p>
-    </details>
-
-    <details class="faq">
-      <summary>Který kanál PMR446 je nejlepší?</summary>
-      <p>Žádný není „oficiálně nejlepší“. V praxi se používá 1 jako domluvený
-      kanál pro setkání, ale množství provozu se mění podle místa a času.
-      Zkus kanály 2, 5 nebo 12 – bývají méně obsazené. Na sdílénkách
-      je obsazení obvykle výrazně nižší. Digitální provoz (dPMR) zabírá dvojici
-      kanálů, takže provoz na sudých kanálech vypadá řidčeji.</p>
-    </details>
-
-    <details class="faq">
-      <summary>Co když chci opravdu velký dosah?</summary>
-      <p>Výška antény. Vyjdi na kopec, ne na stožár za domem. Až když to
-      nestačí, uvažuj o zkoušce operátora a vlastní značce – tam už je
-      dohled počítán v stovkách kilometrů.</p>
-    </details>
-
-    <details class="faq">
-      <summary>Proč mi signál v lese nebo ve městě nebere?</summary>
-      <p>Protože v tomto prostředí je hodně překážek. Ztráty v zástavbě a
-      lese jsou řádově desítky dB – to je celý důvod, proč na pásmu PMR446
-      s 0,5 W vychází dohled v řádu jednotek kilometrů. Použij posuvník
-      „překážky v přímé spojnici“ v kalkulačce a uvidíš to v číslech.</p>
-    </details>
-
-    <details class="faq">
-      <summary>Kde najdu aktuální seznamy kmitočtů?</summary>
-      <p>Především u ČTÚ – přehled všeobecných oprávnění. Pro praxi je užitečný
-      kmity.cz a seznamy převaděčů (např. ok2dds.cz nebo repeaterbook.com).
-      U sdílených kmitočtot ověř aktuální znění oprávnění, protože se mění.</p>
-    </details>
-  </div>
-</section>
-
-<!-- ============ ODKAZY ============ -->
-<section id="odkazy" class="section" aria-labelledby="h-odk">
-  <div class="wrap">
-    <p class="kicker">Kde hledat</p>
-    <h2 id="h-odk">Odkazy a zdroje</h2>
-    <div class="cards cards-3">
-      <article class="card card-sm">
-        <h4>Český telekomunikační úřad</h4>
-        <p>Znění všech všeobecných oprávnění, seznam kmitočtů, podmínky provozu.</p>
-        <p><a href="https://ctu.gov.cz/vseobecna-opravneni" rel="noopener">ctu.gov.cz/vseobecna-opravneni</a></p>
-      </article>
-      <article class="card card-sm">
-        <h4>kmity.cz</h4>
-        <p>Česká komunitní stránka ke kanálům PMR446 a provozu bez licence.</p>
-        <p><a href="https://kmity.cz" rel="noopener">kmity.cz</a></p>
-      </article>
-      <article class="card card-sm">
-        <h4>Seznamy převaděčů</h4>
-        <p>Pro DMR, C4FM a další sytémy – frekvence, výšky, majitelé.</p>
-        <p><a href="https://ok2dds.cz/dmr/" rel="noopener">ok2dds.cz</a></p>
-      </article>
-      <article class="card card-sm">
-        <h4>Český radioklub</h4>
-        <p>Zkoušky operátora, kurzy, technické minimum pro radioamatéry.</p>
-        <p><a href="https://www.ceskyradioklub.cz" rel="noopener">ceskyradioklub.cz</a></p>
-      </article>
-      <article class="card card-sm">
-        <h4>Doporučení CEPT</h4>
-        <p>Harmonizované kmitočtové úseky a technické požadavky v Evropě.</p>
-        <p><a href="https://www.cept.org" rel="noopener">cept.org</a></p>
-      </article>
-      <article class="card card-sm">
-        <h4>Datasheets a normy</h4>
-        <p>ČSN ETSI EN 300 113 (PMR) a EN 301 166 (PMR s konektorem).</p>
-        <p><a href="https://www.etsi.org" rel="noopener">etsi.org</a></p>
-      </article>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Radiokom — interní přehled rádiové komunikace.</p>
     </div>
-    <p class="note note-warn">
-      <strong>Upozornění:</strong> text je informativní a může být neaktuální.
-      Pravidla se mění. Před provozem si ověř aktuální znění příslušného
-      všeobecného oprávnění nebo individuálního oprávnění ČTÚ.
-    </p>
-  </div>
-</section>
+  </footer>
 
-</main>
-
-<footer class="footer">
-  <div class="wrap">
-    <p>
-      <strong>Radiokom.cz</strong> — reference pro vysílačky a radiostanice v ČR.
-      Obsah je informativní a nenahrazuje znění předpisů.
-    </p>
-    <p class="small">
-      Výpočty v kalkulačce jsou orientační odhady pro plánování komunikace.
-    </p>
-  </div>
-</footer>
-
-<script src="assets/js/site.js" defer></script>
-<script src="assets/js/calculator.js" defer></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

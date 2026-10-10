@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radiokom | Tým</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/private.css">
+</head>
+<body>
+  <main class="private-main">
+    <div class="wrap">
+      <section class="lock-screen panel" data-team-lock>
+        <p class="kicker">Soukromá stránka</p>
+        <h1>Přístup pro tým</h1>
+        <p class="lead-sm">Zadejte dočasný PIN.</p>
+        <form>
+          <label for="team-pin">PIN</label>
+          <input id="team-pin" type="password" inputmode="numeric" autocomplete="off" required>
+          <p class="lock-error" role="alert"></p>
+          <button class="btn btn-primary" type="submit">Otevřít</button>
+        </form>
+      </section>
+      <section data-team-content hidden>
+        <header class="private-header">
+          <p class="kicker">Tým</p>
+          <h1>Naše nastavení</h1>
+          <p>Interní poznámky, domluvené kanály a věci, které používáme společně.</p>
+        </header>
+        <div class="private-grid">
+          <article class="private-card panel accent-blue"><h2>Pravidla spojení</h2><ul><li>Nejdřív poslouchat, potom mluvit.</li><li>Mluvit stručně a srozumitelně.</li><li>Důležité údaje zopakovat.</li></ul></article>
+          <article class="private-card panel accent-purple"><h2>Domluva</h2><p>Konkrétní týmové poznámky a postupy můžeme doplnit podle vašich akcí.</p></article>
+        </div>
+        <div class="private-actions"><a class="btn btn-primary" href="trenink.html">Trénink komunikace</a><a class="private-back" href="index.html">Zpět na přehled</a></div>
+      </section>
+    </div>
+  </main>
+  <script src="assets/js/private.js"></script>
+</body>
+</html>

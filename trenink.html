@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radiokom | Trénink komunikace</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/private.css">
+</head>
+<body>
+  <main class="private-main">
+    <div class="wrap">
+      <header class="private-header">
+        <p class="kicker">Aplikace</p>
+        <h1>Trénink komunikace</h1>
+        <p>Vyberte si lekci a procvičte si komunikaci krok za krokem.</p>
+      </header>
+      <section class="lesson-list" data-lesson-list aria-labelledby="lesson-list-title">
+        <div class="lesson-list-heading">
+          <div>
+            <p class="kicker">Lekce</p>
+            <h2 id="lesson-list-title">Co si chcete procvičit?</h2>
+          </div>
+          <span class="lesson-count">4 lekce</span>
+        </div>
+        <button class="lesson-card lesson-card-featured" type="button" data-lesson="quick">
+          <span class="lesson-badge">Začněte tady</span>
+          <span class="lesson-card-content">
+            <strong>Rychlokurz</strong>
+            <span>Nejdůležitější základy v několika minutách.</span>
+          </span>
+          <span class="lesson-arrow" aria-hidden="true">→</span>
+        </button>
+        <div class="lesson-grid">
+          <button class="lesson-card" type="button" data-lesson="calling">
+            <span class="lesson-number">01</span>
+            <span class="lesson-card-content">
+              <strong>Základy volání</strong>
+              <span>Jak správně začít a ukončit spojení.</span>
+            </span>
+            <span class="lesson-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="lesson-card" type="button" data-lesson="message">
+            <span class="lesson-number">02</span>
+            <span class="lesson-card-content">
+              <strong>Předávání zpráv</strong>
+              <span>Jak mluvit stručně a bez nedorozumění.</span>
+            </span>
+            <span class="lesson-arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="lesson-card" type="button" data-lesson="sos">
+            <span class="lesson-number">03</span>
+            <span class="lesson-card-content">
+              <strong>Nouzová komunikace</strong>
+              <span>Co říct při ohrožení a kdy volat 112.</span>
+            </span>
+            <span class="lesson-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+      <section class="training-card panel" data-training hidden>
+        <button class="training-back" type="button" data-training-back>← Zpět na lekce</button>
+        <p class="training-lesson-name" data-training-lesson-name></p>
+        <div class="training-meta"><strong data-training-title></strong><span data-training-count></span></div>
+        <div class="training-progress"><span data-training-progress></span></div>
+        <div class="chat-window" data-training-chat aria-live="polite">
+          <div class="chat-messages" data-training-messages></div>
+          <div class="chat-choices">
+            <p class="chat-prompt">Vyberte odpověď:</p>
+            <div class="training-options" data-training-options></div>
+          </div>
+          <p class="training-feedback" data-training-feedback></p>
+          <button class="btn btn-primary" type="button" data-training-next hidden>Další zpráva</button>
+        </div>
+      </section>
+      <div class="private-actions"><a class="private-back" href="index.html">Zpět na přehled</a></div>
+    </div>
+  </main>
+  <script src="assets/js/private.js"></script>
+</body>
+</html>
