@@ -5,6 +5,71 @@
 .nav-static {
   display: flex;
 }
+.img-dropzone {
+  max-width: 760px;
+  border: 2px dashed var(--line);
+  text-align: center;
+}
+.img-dropzone.is-dragover {
+  border-color: var(--accent);
+  background: #202b35;
+}
+.img-dropzone label {
+  display: block;
+  color: var(--muted);
+  cursor: pointer;
+}
+.img-dropzone input {
+  display: block;
+  width: min(100%, 420px);
+  margin: 1rem auto;
+  color: var(--muted);
+}
+.img-status {
+  margin: 0;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+.img-result {
+  max-width: 980px;
+  margin-top: 1rem;
+}
+.print-card {
+  width: min(900px, calc(100% - 2rem));
+  margin: 3rem auto;
+  padding: 2rem;
+  color: #101418;
+  background: #fff;
+}
+.print-card h1,
+.print-card h2 {
+  color: #101418;
+}
+.print-card .kicker {
+  color: #176aa8;
+}
+.print-card p {
+  color: #27323b;
+}
+.print-table {
+  margin: 1rem 0 2rem;
+}
+.print-card .release-table th,
+.print-card .release-table td {
+  color: #101418;
+  background: #fff;
+  border-color: #b9c2ca;
+}
+.print-card .release-table th {
+  background: #e8eef3;
+}
+.print-sos {
+  padding: 1rem;
+  border: 2px solid #b53c4d;
+}
+.print-emergency {
+  font-size: 1.1rem;
+}
 .lock-notice {
   margin: 0.9rem 0 1.25rem;
   padding: 0.75rem 0.85rem;
@@ -187,6 +252,11 @@
   font-weight: 800;
   text-decoration: none;
   white-space: nowrap;
+}
+.download-actions {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
 }
 .download-link:hover {
   color: var(--text);
@@ -481,4 +551,17 @@
   .lesson-card-featured { flex-wrap: wrap; }
   .chat-window { padding: 0.75rem; }
   .chat-message { max-width: 94%; }
+}
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-card {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .print-card-page {
+    background: #fff;
+  }
 }

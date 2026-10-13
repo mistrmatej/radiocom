@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radiocom | Rychlá karta</title>
+  <meta name="description" content="Tisková karta společných rádiových kanálů a nouzového postupu.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/private.css">
+</head>
+<body class="print-card-page">
+  <main class="print-card">
+    <header>
+      <p class="kicker">Radiocom</p>
+      <h1>Rychlá karta rádia</h1>
+      <p>Všichni musí mít stejné pásmo, kanál a případně tón.</p>
+    </header>
+    <section>
+      <h2>Společné kanály</h2>
+      <table class="release-table print-table">
+        <thead><tr><th>Pásmo</th><th>Kanál</th><th>Frekvence</th><th>Max. výkon</th></tr></thead>
+        <tbody>
+          <tr><td>PMR446</td><td>1</td><td>446,00625 MHz</td><td>0,5 W</td></tr>
+          <tr><td>PMR446</td><td>2</td><td>446,01875 MHz</td><td>0,5 W</td></tr>
+          <tr><td>UHF</td><td>UHF1</td><td>448,490000 MHz</td><td>5 W</td></tr>
+          <tr><td>VHF</td><td>VHF1</td><td>172,650000 MHz</td><td>5 W</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="print-sos">
+      <h2>Nouze</h2>
+      <p><strong>SOS, SOS, SOS.</strong> Řekněte kdo volá, kde jste, co se stalo, kolik lidí potřebuje pomoc a co potřebujete.</p>
+      <p class="print-emergency"><strong>112</strong> — při ohrožení života nebo zdraví volejte záchranné složky.</p>
+    </section>
+    <button class="btn btn-primary no-print" type="button" onclick="window.print()">Vytisknout kartu</button>
+  </main>
+  <script src="assets/js/pwa.js"></script>
+</body>
+</html>

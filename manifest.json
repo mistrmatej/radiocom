@@ -1,0 +1,10 @@
+{
+  "name": "Radiocom",
+  "short_name": "Radiocom",
+  "lang": "cs",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#101418",
+  "theme_color": "#121821",
+  "description": "Přehled rádiových kanálů, trénink komunikace a konfigurační soubory."
+}
