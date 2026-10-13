@@ -4,16 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Radiocom | Tým</title>
+  <meta name="description" content="Skrytá týmová sekce s pravidly komunikace a společným nastavením.">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/private.css">
 </head>
 <body>
+  <header class="topbar">
+    <div class="wrap topbar-in">
+      <a class="brand" href="index.html" aria-label="Radiocom domů"><span class="brand-mark" aria-hidden="true"></span><span class="brand-txt">Radiocom</span></a>
+      <nav class="nav nav-static" aria-label="Hlavní navigace">
+        <a href="index.html#postup">Jak funguje</a>
+        <a href="index.html#kanaly">Kanály</a>
+        <a href="trenink.html">Trénink</a>
+        <a href="images.html">Soubory</a>
+      </nav>
+    </div>
+  </header>
   <main class="private-main">
     <div class="wrap">
       <section class="lock-screen panel" data-team-lock>
         <p class="kicker">Soukromá stránka</p>
         <h1>Přístup pro tým</h1>
         <p class="lead-sm">Zadejte dočasný PIN.</p>
+        <p class="lock-notice">Tato statická stránka není skutečné zabezpečení. Pro citlivý obsah použijte autentizaci na serveru.</p>
         <form>
           <label for="team-pin">PIN</label>
           <input id="team-pin" type="password" inputmode="numeric" autocomplete="off" required>

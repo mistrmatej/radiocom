@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "scripts": {
+    "generate-downloads": "node scripts/generate-downloads.mjs"
+  }
+}

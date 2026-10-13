@@ -12,12 +12,14 @@
 
   function createRow(file) {
     var row = document.createElement('tr');
-    row.innerHTML = '<td><strong></strong></td><td><span class="file-type"></span></td><td></td><td><a class="download-link" download>Stáhnout</a></td>';
+    row.innerHTML = '<td><strong></strong><small class="file-description"></small></td><td><span class="file-type"></span></td><td></td><td><a class="download-link" download>Stáhnout</a></td>';
     row.querySelector('strong').textContent = file.name;
+    row.querySelector('.file-description').textContent = file.description || '';
     row.querySelector('.file-type').textContent = file.extension;
     row.querySelector('td:nth-child(3)').textContent = formatSize(file.size);
     var link = row.querySelector('a');
     link.href = file.path;
+    link.title = 'Stáhnout ' + file.name;
     return row;
   }
 
@@ -25,6 +27,10 @@
     var radio = data.find(function (item) { return item.id === card.dataset.radioId; });
     if (!radio) return;
     card.querySelector('[data-release-count]').textContent = radio.files.length + (radio.files.length === 1 ? ' soubor' : ' souborů');
+    var note = card.querySelector('[data-release-note]');
+    if (note) {
+      note.textContent = radio.notes || '';
+    }
     var body = card.querySelector('[data-release-files]');
     body.innerHTML = '';
     if (!radio.files.length) {

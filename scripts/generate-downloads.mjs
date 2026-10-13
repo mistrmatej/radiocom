@@ -10,6 +10,16 @@ const radios = [
   { id: 'bf-v8a', name: 'Baofeng BF-V8A' }
 ];
 
+function describeFile(name) {
+  const normalized = name.toLowerCase();
+  if (normalized.includes('skip_licensed')) return 'PMR446 + licencované kanály; ověřte nastavení před nahráním.';
+  if (normalized.includes('tobi_test')) return 'Testovací konfigurace; nepoužívat bez ověření.';
+  if (normalized.includes('fullpmr446')) return 'Plná konfigurace PMR446.';
+  if (normalized.includes('partpmr446')) return 'Částečná konfigurace PMR446 a UHF.';
+  if (normalized.includes('stock')) return 'Původní tovární konfigurace.';
+  return 'Konfigurační obraz pro radiostanici.';
+}
+
 async function getFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
   const files = [];
@@ -21,7 +31,8 @@ async function getFiles(directory) {
       name: entry.name,
       path: posix.join(...relative(projectRoot, path).split('\\')),
       extension: 'IMG',
-      size: details.size
+      size: details.size,
+      description: describeFile(entry.name)
     });
   }
   return files.sort((a, b) => a.name.localeCompare(b.name));
@@ -29,7 +40,11 @@ async function getFiles(directory) {
 
 const data = [];
 for (const radio of radios) {
-  data.push({ ...radio, files: await getFiles(join(downloadsRoot, radio.id)) });
+  data.push({
+    ...radio,
+    notes: 'Před nahráním si zálohujte původní konfiguraci radiostanice.',
+    files: await getFiles(join(downloadsRoot, radio.id))
+  });
 }
 
 const output = `window.RADIOCOM_DOWNLOADS = ${JSON.stringify(data, null, 2)};\n`;

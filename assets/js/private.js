@@ -7,18 +7,35 @@
     var input = lock.querySelector('input');
     var error = lock.querySelector('.lock-error');
     var content = document.querySelector('[data-team-content]');
-    if (sessionStorage.getItem('radiocom-team-unlocked') === 'true') {
+    var attempts = 0;
+    var maxAttempts = 5;
+    var pinHash = 'a1fb4e703a9ef1fa4936801721ff285a97ac85330856674412e054892afe6972';
+    var unlock = function () {
       lock.hidden = true;
       content.hidden = false;
+    };
+    if (sessionStorage.getItem('radiocom-team-unlocked') === 'true') {
+      unlock();
     }
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
       event.preventDefault();
-      if (input.value === '2468') {
+      if (attempts >= maxAttempts) return;
+      var encoded = new TextEncoder().encode(input.value);
+      var digest = await crypto.subtle.digest('SHA-256', encoded);
+      var hash = Array.from(new Uint8Array(digest), function (byte) {
+        return byte.toString(16).padStart(2, '0');
+      }).join('');
+      if (hash === pinHash) {
         sessionStorage.setItem('radiocom-team-unlocked', 'true');
-        lock.hidden = true;
-        content.hidden = false;
+        unlock();
       } else {
+        attempts++;
         error.textContent = 'Nesprávný PIN.';
+        if (attempts >= maxAttempts) {
+          error.textContent = 'Příliš mnoho pokusů. Obnovte stránku a zkuste to znovu.';
+          input.disabled = true;
+          form.querySelector('button').disabled = true;
+        }
         input.select();
       }
     });
@@ -237,21 +254,22 @@
       button.type = 'button';
       button.textContent = text;
       button.addEventListener('click', function () {
-        options.querySelectorAll('button').forEach(function (item) { item.disabled = true; });
-        button.classList.add(optionIndex === current.answer ? 'is-correct' : 'is-wrong');
+        var correct = optionIndex === current.answer;
+        button.disabled = true;
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
         var outgoing = document.createElement('div');
         outgoing.className = 'chat-message chat-message-outgoing';
         outgoing.innerHTML = '<span class="chat-author">Vy</span><p></p>';
         outgoing.querySelector('p').textContent = text;
         messages.appendChild(outgoing);
-        if (optionIndex === current.answer) score++;
-        feedback.textContent = optionIndex === current.answer ? 'Správně. ' + current.feedback : 'Zkuste to znovu v dalším scénáři. ' + current.feedback;
+        if (correct) score++;
+        feedback.textContent = correct ? 'Správně. ' + current.feedback : 'Zkuste vybrat jinou odpověď. ' + current.feedback;
         var response = document.createElement('div');
-        response.className = 'chat-message chat-message-response ' + (optionIndex === current.answer ? 'is-correct' : 'is-wrong');
+        response.className = 'chat-message chat-message-response ' + (correct ? 'is-correct' : 'is-wrong');
         response.innerHTML = '<span class="chat-author">Trenér</span><p></p>';
-        response.querySelector('p').textContent = optionIndex === current.answer ? 'Správně. ' + current.feedback : 'Ještě ne. ' + current.feedback;
+        response.querySelector('p').textContent = correct ? 'Správně. ' + current.feedback : 'Ještě ne. ' + current.feedback;
         messages.appendChild(response);
-        next.hidden = false;
+        next.hidden = !correct;
       });
       options.appendChild(button);
     });
