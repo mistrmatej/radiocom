@@ -127,7 +127,7 @@
   color: var(--muted);
   background: rgba(255, 196, 92, 0.08);
   border: 1px solid rgba(255, 196, 92, 0.3);
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 0.85rem;
 }
 .private-header {
@@ -204,7 +204,7 @@
 .release-table-wrap {
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   background: var(--bg);
 }
 .release-table {
@@ -256,7 +256,7 @@
   color: var(--accent);
   background: color-mix(in srgb, var(--panel) 90%, var(--accent));
   border: 1px solid var(--accent);
-  border-radius: 6px;
+  border-radius: 12px;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -296,7 +296,7 @@
   padding: 0.8rem 0.9rem;
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
 }
 .download-item span:first-child {
   display: grid;
@@ -319,7 +319,7 @@
   min-height: 2rem;
   padding: 0.35rem 0.65rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
@@ -377,7 +377,7 @@
   color: var(--text);
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -401,7 +401,7 @@
   padding: 0.3rem 0.55rem;
   color: var(--bg);
   background: var(--accent);
-  border-radius: 5px;
+  border-radius: 12px;
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -466,7 +466,7 @@
   color: var(--text);
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
 }
 .lock-screen input:focus {
   outline: 2px solid var(--accent);
@@ -486,7 +486,7 @@
   margin: 1rem 0 1.5rem;
   overflow: hidden;
   background: var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
 }
 .training-progress span {
   display: block;
@@ -509,7 +509,7 @@
   color: var(--text);
   background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
 }
 .chat-window {
@@ -518,7 +518,7 @@
   padding: 1rem;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
 }
 .chat-messages {
   display: grid;
@@ -532,7 +532,7 @@
   width: fit-content;
   max-width: min(88%, 480px);
   padding: 0.65rem 0.85rem;
-  border-radius: 6px;
+  border-radius: 12px;
   animation: chat-message-in 0.24s ease-out both;
 }
 .chat-message p {
@@ -655,7 +655,7 @@
   .release-table tr {
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 12px;
     background: var(--panel);
   }
   .release-table td {
