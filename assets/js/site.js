@@ -2,58 +2,6 @@
 (function () {
   'use strict';
 
-  function fmtMHz(v) {
-    var s = v.toFixed(6);
-    s = s.replace(/0+$/, '').replace(/\.$/, '');
-    return s.replace('.', ',');
-  }
-
-  function tabulkaPmr() {
-    var tbody = document.querySelector('#pmr-channel-table tbody');
-    if (!tbody) return;
-    var html = '';
-    for (var i = 0; i < 8; i++) {
-      var druhy = i + 8;
-      html += '<tr><td>' + (i + 1) + '</td>' +
-        '<td>' + fmtMHz(446.00625 + i * 0.0125) + '</td>' +
-        '<td>' + (druhy + 1) + '</td>' +
-        '<td>' + fmtMHz(446.00625 + druhy * 0.0125) + '</td></tr>';
-    }
-    tbody.innerHTML = html;
-  }
-
-  var tymoveKanaly = {
-    uhf: [
-      ['UHF1', '448,490000', '5 W'],
-      ['UHF2', '448,570000', '5 W'],
-      ['UHF3', '448,610000', '5 W'],
-      ['UHF4', '449,770000', '1 W'],
-      ['UHF5', '449,810000', '1 W'],
-      ['UHF6', '442,200000', '5 W'],
-      ['UHF7', '442,225000', '5 W'],
-      ['UHF8', '442,250000', '5 W'],
-      ['UHF9', '442,275000', '5 W']
-    ],
-    vhf: [
-      ['VHF1', '172,650000', '5 W'],
-      ['VHF2', '172,725000', '1 W'],
-      ['VHF3', '172,950000', '5 W'],
-      ['VHF4', '172,975000', '5 W'],
-      ['VHF5', '173,050000', '1 W']
-    ]
-  };
-
-  function tabulkyTymu() {
-    Object.keys(tymoveKanaly).forEach(function (pasmo) {
-      var tbody = document.querySelector('#' + pasmo + '-panel tbody');
-      if (!tbody) return;
-      tbody.innerHTML = tymoveKanaly[pasmo].map(function (kanal) {
-        return '<tr><td>' + kanal[0] + '</td><td>' + kanal[1] +
-          ' MHz</td><td>' + kanal[2] + '</td></tr>';
-      }).join('');
-    });
-  }
-
   function prepinaniPasem() {
     function vybratPasmo(pasmo) {
       var cilovaZalozka = document.querySelector('.channel-tab[data-band="' + pasmo + '"]');
@@ -157,8 +105,8 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { tabulkaPmr(); tabulkyTymu(); prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); });
+    document.addEventListener('DOMContentLoaded', function () { prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); });
   } else {
-    tabulkaPmr(); tabulkyTymu(); prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce();
+    prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce();
   }
 })();

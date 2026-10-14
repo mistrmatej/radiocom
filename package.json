@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "build": "node scripts/generate-channels.mjs && node scripts/generate-downloads.mjs",
+    "generate-channels": "node scripts/generate-channels.mjs",
     "generate-downloads": "node scripts/generate-downloads.mjs"
   }
 }
