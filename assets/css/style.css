@@ -325,7 +325,8 @@ h3 {
 }
 .quick-link:hover b { transform: translateX(0.25rem); }
 .quick-link-uhf b { color: var(--uhf); }
-.quick-link-vhf b { color: var(--pmr); }
+.quick-link-vhf b { color: var(--vhf); }
+.quick-link-pmr b { color: var(--pmr); }
 .quick-link-sos strong,
 .quick-link-sos b { color: var(--sos); }
 .fact-row {
@@ -483,11 +484,12 @@ h3 {
   scroll-margin-top: 90px;
   border-top: 4px solid var(--accent);
 }
-.channel-panel:nth-child(2) { border-top-color: var(--uhf); }
-.channel-panel:nth-child(3) { border-top-color: var(--pmr); }
-.channel-panel:nth-child(1) h3 { color: var(--accent); }
-.channel-panel:nth-child(2) h3 { color: var(--uhf); }
-.channel-panel:nth-child(3) h3 { color: var(--pmr); }
+.channel-panel#pmr446 { border-top-color: var(--pmr); }
+.channel-panel#uhf { border-top-color: var(--uhf); }
+.channel-panel#vhf { border-top-color: var(--vhf); }
+.channel-panel#pmr446 h3 { color: var(--pmr); }
+.channel-panel#uhf h3 { color: var(--uhf); }
+.channel-panel#vhf h3 { color: var(--vhf); }
 .channel-panel {
   align-self: start;
 }
@@ -615,11 +617,11 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   color: var(--muted);
   margin: 0;
 }
-.band-card-pmr { border-top: 4px solid var(--accent); }
-.band-card-vhf { border-top: 4px solid var(--pmr); }
+.band-card-pmr { border-top: 4px solid var(--pmr); }
+.band-card-vhf { border-top: 4px solid var(--vhf); }
 .band-card-uhf { border-top: 4px solid var(--uhf); }
-.band-card-pmr .band-label { color: var(--accent); }
-.band-card-vhf .band-label { color: var(--pmr); }
+.band-card-pmr .band-label { color: var(--pmr); }
+.band-card-vhf .band-label { color: var(--vhf); }
 .band-card-uhf .band-label { color: var(--uhf); }
 .band-use {
   position: absolute;
@@ -647,11 +649,11 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   stroke-width: 3;
 }
 .band-icon-people {
-  color: var(--accent);
+  color: var(--pmr);
   animation: icon-float 3.2s ease-in-out infinite;
 }
 .band-icon-forest {
-  color: var(--pmr);
+  color: var(--vhf);
   animation: icon-sway 4s ease-in-out infinite;
 }
 .band-icon-city {
