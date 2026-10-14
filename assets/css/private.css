@@ -168,7 +168,7 @@
 }
 .private-card.accent-blue { border-top: 4px solid var(--accent); }
 .private-card.accent-purple { border-top: 4px solid #c69cff; }
-.private-card.accent-green { border-top: 4px solid var(--success); }
+.private-card.accent-green { border-top: 4px solid var(--pmr); }
 .private-card.accent-red { border-top: 4px solid #ff8996; }
 .private-actions {
   display: flex;
@@ -177,7 +177,7 @@
   margin-top: 1.5rem;
 }
 .private-back {
-  color: var(--dim);
+  color: var(--muted);
   text-decoration: none;
 }
 .private-back:hover { color: var(--text); }
@@ -197,13 +197,13 @@
   margin: 0;
 }
 .release-count {
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.85rem;
   white-space: nowrap;
 }
 .release-table-wrap {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 12px;
   background: #10161c;
 }
@@ -215,14 +215,14 @@
 .release-table th,
 .release-table td {
   padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
 .release-table tr:last-child td {
   border-bottom: 0;
 }
 .release-table th {
-  color: var(--accent-strong);
+  color: var(--accent);
   background: #202a34;
   font-size: 0.72rem;
   letter-spacing: 0.06em;
@@ -246,7 +246,7 @@
 .release-table td:first-child small {
   display: block;
   margin-top: 0.25rem;
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.45;
 }
@@ -262,12 +262,12 @@
   letter-spacing: 0.04em;
 }
 .file-size {
-  color: var(--dim) !important;
+  color: var(--muted) !important;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .release-empty {
-  color: var(--dim) !important;
+  color: var(--muted) !important;
   text-align: center;
 }
 .radio-download-card {
@@ -295,7 +295,7 @@
   gap: 1rem;
   padding: 0.8rem 0.9rem;
   background: #151b21;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 .download-item span:first-child {
@@ -303,10 +303,10 @@
   gap: 0.2rem;
 }
 .download-item small {
-  color: var(--dim);
+  color: var(--muted);
 }
 .download-status {
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.75rem;
   font-weight: 700;
   text-align: right;
@@ -318,7 +318,7 @@
   justify-content: center;
   min-height: 2rem;
   padding: 0.35rem 0.65rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 7px;
   color: var(--accent);
   font-size: 0.78rem;
@@ -346,8 +346,8 @@
 }
 .download-link-primary:hover {
   color: #07111b;
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
+  background: var(--accent);
+  border-color: var(--accent);
 }
 .lesson-list {
   max-width: 900px;
@@ -363,7 +363,7 @@
   margin: 0;
 }
 .lesson-count {
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.9rem;
 }
 .lesson-card {
@@ -376,7 +376,7 @@
   text-align: left;
   color: var(--text);
   background: #151b21;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
@@ -436,7 +436,7 @@
 }
 .training-back {
   padding: 0;
-  color: var(--dim);
+  color: var(--muted);
   background: none;
   border: 0;
   cursor: pointer;
@@ -465,7 +465,7 @@
   padding: 0.8rem;
   color: var(--text);
   background: #101418;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 8px;
 }
 .lock-screen input:focus {
@@ -508,7 +508,7 @@
   text-align: left;
   color: var(--text);
   background: #151b21;
-  border: 1px solid var(--line);
+  border: 1px solid var(--border);
   border-radius: 8px;
   cursor: pointer;
 }
@@ -561,7 +561,7 @@
 .chat-author {
   display: block;
   margin-bottom: 0.25rem;
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -576,7 +576,7 @@
 }
 .chat-prompt {
   margin: 0;
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
 }
@@ -596,7 +596,7 @@
 }
 .training-option:disabled { cursor: default; }
 .training-option.is-correct {
-  border-color: var(--success);
+  border-color: var(--pmr);
   background: rgba(112, 214, 161, 0.14);
 }
 .training-option.is-wrong {
@@ -612,7 +612,7 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  color: var(--dim);
+  color: var(--muted);
   font-size: 0.9rem;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -654,7 +654,7 @@
   }
   .release-table tr {
     overflow: hidden;
-    border: 1px solid var(--line);
+    border: 1px solid var(--border);
     border-radius: 10px;
     background: #151c23;
   }
@@ -665,11 +665,11 @@
     align-items: center;
     width: auto !important;
     padding: 0.7rem 0.8rem;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border);
   }
   .release-table td::before {
     content: attr(data-label);
-    color: var(--dim);
+    color: var(--muted);
     font-size: 0.67rem;
     font-weight: 800;
     letter-spacing: 0.06em;

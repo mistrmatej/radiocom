@@ -4,7 +4,7 @@
   "lang": "cs",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#101418",
-  "theme_color": "#121821",
+  "background_color": "#0E1214",
+  "theme_color": "#0E1214",
   "description": "Přehled rádiových kanálů, trénink komunikace a konfigurační soubory."
 }
