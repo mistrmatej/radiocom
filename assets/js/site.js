@@ -2,47 +2,6 @@
 (function () {
   'use strict';
 
-  function prepinaniPasem() {
-    function vybratPasmo(pasmo) {
-      var cilovaZalozka = document.querySelector('.channel-tab[data-band="' + pasmo + '"]');
-      if (!cilovaZalozka) {
-        document.querySelectorAll('.band-nav-link').forEach(function (link) {
-          link.classList.toggle('is-active', link.getAttribute('data-band') === pasmo);
-        });
-        return;
-      }
-
-      document.querySelectorAll('.channel-tab').forEach(function (tab) {
-        var aktivni = tab === cilovaZalozka;
-        tab.classList.toggle('is-active', aktivni);
-        tab.setAttribute('aria-selected', aktivni ? 'true' : 'false');
-      });
-      document.querySelectorAll('[data-band-panel]').forEach(function (panel) {
-        var skryty = panel.getAttribute('data-band-panel') !== pasmo;
-        panel.classList.toggle('is-hidden', skryty);
-        panel.setAttribute('aria-hidden', skryty ? 'true' : 'false');
-      });
-      document.querySelectorAll('.band-nav-link').forEach(function (link) {
-        link.classList.toggle('is-active', link.getAttribute('data-band') === pasmo);
-      });
-    }
-
-    document.querySelectorAll('.channel-tab, .band-nav-link').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        var pasmo = button.getAttribute('data-band');
-        if (button.classList.contains('band-nav-link')) {
-          event.preventDefault();
-          var cil = document.getElementById(pasmo === 'pmr' ? 'pmr446' : pasmo);
-          if (cil) cil.scrollIntoView({
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-            block: 'start'
-          });
-        }
-        vybratPasmo(pasmo);
-      });
-    });
-  }
-
   function kopirovaniFrekvenci() {
     function fallbackCopy(text) {
       var area = document.createElement('textarea');
@@ -150,8 +109,8 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci(); });
+    document.addEventListener('DOMContentLoaded', function () { vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci(); });
   } else {
-    prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci();
+    vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci();
   }
 })();

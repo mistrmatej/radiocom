@@ -9,7 +9,7 @@
 }
 
 .error-shell {
-  width: min(100%, 980px);
+  width: min(100%, 1120px);
   padding: clamp(1.25rem, 5vw, 3rem);
 }
 

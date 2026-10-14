@@ -9,7 +9,7 @@
   --vhf: #C9D86B;
   --uhf: #5FB3D9;
   --sos: #FF4A3D;
-  --max: 1120px;
+  --max: 1280px;
 }
 
 @font-face {
@@ -90,7 +90,7 @@ a:hover,
 button:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 .wrap {
-  width: min(var(--max), calc(100% - 2rem));
+  width: min(var(--max), calc(100% - 3rem));
   margin-inline: auto;
 }
 
@@ -212,7 +212,7 @@ button:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hero-inner {
   display: grid;
   grid-template-columns: 1.5fr 0.9fr;
-  gap: 2rem;
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
 }
 .kicker {
@@ -346,7 +346,7 @@ h3 {
 }
 
 .section {
-  padding: clamp(3rem, 6vw, 4.6rem) 0;
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
 }
 .section-alt {
   background: var(--panel);
@@ -359,7 +359,7 @@ h3 {
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .step {
   padding: 1.5rem 1.25rem;
@@ -384,7 +384,7 @@ h3 {
 .two-col {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(300px, 0.7fr);
-  gap: 2rem;
+  gap: clamp(2.5rem, 5vw, 5rem);
   align-items: start;
 }
 .check-list {
@@ -433,14 +433,6 @@ h3 {
   color: var(--muted);
   margin: 0 0 1rem;
 }
-.channel-tabs,
-.band-switcher {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-.channel-tab,
 .band-choice {
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -450,8 +442,6 @@ h3 {
   font-weight: 700;
   cursor: pointer;
 }
-.channel-tab:hover,
-.channel-tab.is-active,
 .band-choice:hover,
 .band-choice.is-active {
   background: var(--accent);
@@ -477,13 +467,13 @@ h3 {
 .is-hidden { display: none; }
 .channels-grid {
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 1.5rem;
   align-items: start;
 }
 .channel-panel {
   min-width: 0;
-  padding: 0.9rem;
+  padding: 1.25rem;
   scroll-margin-top: 90px;
   border-top: 4px solid var(--accent);
 }
@@ -502,12 +492,12 @@ h3 {
 }
 .pmr-grid { display: block; }
 .channel-panel h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.2rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 .channel-panel .panel-sub {
-  margin-bottom: 0.7rem;
-  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  font-size: 0.92rem;
 }
 .band-licence-note {
   margin: -0.2rem 0 0.75rem;
@@ -528,7 +518,7 @@ thead th {
   position: sticky;
   top: 0;
   z-index: 1;
-  padding: 0.65rem 0.55rem;
+  padding: 0.85rem 0.75rem;
   text-align: left;
   color: var(--text);
   background: var(--panel);
@@ -538,7 +528,7 @@ thead th {
   border-bottom: 1px solid var(--border);
 }
 tbody td {
-  padding: 0.7rem 0.55rem;
+  padding: 0.85rem 0.75rem;
   border-bottom: 1px solid var(--border);
   color: var(--text);
   font-size: 0.82rem;
@@ -809,6 +799,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
 }
 
 @media (max-width: 760px) {
+  .wrap { width: min(var(--max), calc(100% - 2rem)); }
   .nav-toggle { display: inline-flex; }
   .nav {
     position: absolute;
