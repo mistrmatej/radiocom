@@ -12,45 +12,6 @@
         return;
       }
 
-      function kopirovaniFrekvenci() {
-        function fallbackCopy(text) {
-          var area = document.createElement('textarea');
-          area.value = text;
-          area.setAttribute('readonly', '');
-          area.style.position = 'fixed';
-          area.style.opacity = '0';
-          document.body.appendChild(area);
-          area.select();
-          var success = document.execCommand('copy');
-          area.remove();
-          return success;
-        }
-
-        function copy(button) {
-          var text = button.getAttribute('data-copy-frequency');
-          var result = navigator.clipboard && navigator.clipboard.writeText
-            ? navigator.clipboard.writeText(text)
-            : Promise.resolve(fallbackCopy(text));
-          result.then(function (success) {
-            if (success === false) throw new Error('copy failed');
-            var original = button.textContent;
-            button.textContent = 'Zkopírováno';
-            button.classList.add('is-copied');
-            window.setTimeout(function () {
-              button.textContent = original;
-              button.classList.remove('is-copied');
-            }, 1400);
-          }).catch(function () {
-            button.textContent = 'Kopírování selhalo';
-            window.setTimeout(function () { button.textContent = 'Kopírovat'; }, 1800);
-          });
-        }
-
-        document.querySelectorAll('[data-copy-frequency]').forEach(function (button) {
-          button.addEventListener('click', function () { copy(button); });
-        });
-      }
-
       document.querySelectorAll('.channel-tab').forEach(function (tab) {
         var aktivni = tab === cilovaZalozka;
         tab.classList.toggle('is-active', aktivni);
@@ -79,6 +40,45 @@
         }
         vybratPasmo(pasmo);
       });
+    });
+  }
+
+  function kopirovaniFrekvenci() {
+    function fallbackCopy(text) {
+      var area = document.createElement('textarea');
+      area.value = text;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      var success = document.execCommand('copy');
+      area.remove();
+      return success;
+    }
+
+    function copy(button) {
+      var text = button.getAttribute('data-copy-frequency');
+      var result = navigator.clipboard && navigator.clipboard.writeText
+        ? navigator.clipboard.writeText(text)
+        : Promise.resolve(fallbackCopy(text));
+      result.then(function (success) {
+        if (success === false) throw new Error('copy failed');
+        var original = button.textContent;
+        button.textContent = 'Zkopírováno';
+        button.classList.add('is-copied');
+        window.setTimeout(function () {
+          button.textContent = original;
+          button.classList.remove('is-copied');
+        }, 1400);
+      }).catch(function () {
+        button.textContent = 'Kopírování selhalo';
+        window.setTimeout(function () { button.textContent = 'Kopírovat'; }, 1800);
+      });
+    }
+
+    document.querySelectorAll('[data-copy-frequency]').forEach(function (button) {
+      button.addEventListener('click', function () { copy(button); });
     });
   }
 
@@ -114,6 +114,7 @@
         btn.setAttribute('aria-expanded', 'false');
       }
     });
+
   }
 
   function otevrene() {
