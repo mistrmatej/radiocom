@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radiocom-v1';
+const CACHE_NAME = 'radiocom-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -9,6 +9,9 @@ const APP_SHELL = [
   './print.html',
   './assets/css/style.css',
   './assets/css/private.css',
+  './assets/brand/radiocom-mark.svg',
+  './assets/brand/radiocom-social.svg',
+  './assets/brand/apple-touch-icon.png',
   './assets/js/site.js',
   './assets/js/private.js',
   './assets/js/downloads.js',
