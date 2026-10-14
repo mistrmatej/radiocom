@@ -669,6 +669,30 @@ tbody tr:hover { background: rgba(99, 179, 255, 0.12); }
 .sos-small {
   font-size: 0.9rem;
 }
+.sos-phrases {
+  margin-top: 1.5rem;
+  border: 1px solid #65323d;
+  border-radius: 10px;
+  background: #241b1f;
+}
+.sos-phrases summary,
+.print-sos summary {
+  cursor: pointer;
+  padding: 0.9rem 1rem;
+  color: #ffadb6;
+  font-weight: 800;
+}
+.sos-phrases summary::marker,
+.print-sos summary::marker {
+  color: #ff6879;
+}
+.sos-phrases-body {
+  padding: 0 1rem 1rem;
+  color: var(--muted);
+}
+.sos-phrases-body p {
+  margin: 0.65rem 0 0;
+}
 @media (prefers-reduced-motion: reduce) {
   .band-icon,
   .band-icon-city i { animation: none; }

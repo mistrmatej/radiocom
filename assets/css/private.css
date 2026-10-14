@@ -108,6 +108,16 @@
   padding: 1rem;
   border: 2px solid #b53c4d;
 }
+.print-sos summary {
+  padding: 0 0 0.4rem;
+  color: #101418;
+}
+.print-sos p {
+  margin: 0.45rem 0 0;
+  color: #27323b;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
 .print-emergency {
   font-size: 1.1rem;
 }
