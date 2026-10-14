@@ -167,9 +167,9 @@
   margin-bottom: 0;
 }
 .private-card.accent-blue { border-top: 4px solid var(--accent); }
-.private-card.accent-purple { border-top: 4px solid #c69cff; }
+.private-card.accent-purple { border-top: 4px solid var(--uhf); }
 .private-card.accent-green { border-top: 4px solid var(--pmr); }
-.private-card.accent-red { border-top: 4px solid #ff8996; }
+.private-card.accent-red { border-top: 4px solid var(--sos); }
 .private-actions {
   display: flex;
   gap: 0.75rem;
@@ -204,8 +204,8 @@
 .release-table-wrap {
   overflow: hidden;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #10161c;
+  border-radius: 6px;
+  background: var(--bg);
 }
 .release-table {
   width: 100%;
@@ -223,21 +223,21 @@
 }
 .release-table th {
   color: var(--accent);
-  background: #202a34;
+  background: var(--panel);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 .release-table td {
   color: var(--muted);
-  background: #151c23;
+  background: var(--panel);
   font-size: 0.9rem;
 }
 .release-table tbody tr {
   transition: background 0.2s ease;
 }
 .release-table tbody tr:hover td {
-  background: #1b2731;
+  background: var(--panel);
 }
 .release-table td:first-child {
   color: var(--text);
@@ -254,9 +254,9 @@
   display: inline-block;
   padding: 0.25rem 0.5rem;
   color: var(--accent);
-  background: rgba(99, 179, 255, 0.1);
-  border: 1px solid rgba(99, 179, 255, 0.45);
-  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 90%, var(--accent));
+  border: 1px solid var(--accent);
+  border-radius: 6px;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -294,9 +294,9 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.8rem 0.9rem;
-  background: #151b21;
+  background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 .download-item span:first-child {
   display: grid;
@@ -319,7 +319,7 @@
   min-height: 2rem;
   padding: 0.35rem 0.65rem;
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: 6px;
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
@@ -337,15 +337,15 @@
 .download-link:hover {
   color: var(--text);
   border-color: var(--accent);
-  background: #26313b;
+  background: var(--border);
 }
 .download-link-primary {
-  color: #07111b;
+  color: var(--bg);
   background: var(--accent);
   border-color: var(--accent);
 }
 .download-link-primary:hover {
-  color: #07111b;
+  color: var(--bg);
   background: var(--accent);
   border-color: var(--accent);
 }
@@ -375,15 +375,15 @@
   padding: 1.15rem 1.25rem;
   text-align: left;
   color: var(--text);
-  background: #151b21;
+  background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
   transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 .lesson-card:hover {
   border-color: var(--accent);
-  background: #202b35;
+  background: var(--panel);
   transform: translateY(-2px);
 }
 .lesson-card-featured {
@@ -391,15 +391,15 @@
   padding: 1.4rem 1.5rem;
   margin-bottom: 1rem;
   border-color: var(--accent);
-  background: linear-gradient(135deg, rgba(83, 168, 255, 0.2), #151b21 62%);
-  box-shadow: 0 12px 30px rgba(24, 119, 210, 0.12);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--panel) 80%, var(--accent)), var(--panel) 62%);
+  box-shadow: none;
 }
 .lesson-card-featured:hover {
-  background: linear-gradient(135deg, rgba(83, 168, 255, 0.28), #202b35 62%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--panel) 72%, var(--accent)), var(--panel) 62%);
 }
 .lesson-badge {
   padding: 0.3rem 0.55rem;
-  color: #08111a;
+  color: var(--bg);
   background: var(--accent);
   border-radius: 5px;
   font-size: 0.72rem;
@@ -464,9 +464,9 @@
   width: 100%;
   padding: 0.8rem;
   color: var(--text);
-  background: #101418;
+  background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
 }
 .lock-screen input:focus {
   outline: 2px solid var(--accent);
@@ -474,7 +474,7 @@
 }
 .lock-error {
   min-height: 1.5rem;
-  color: #ff8996;
+  color: var(--sos);
   margin: 0.75rem 0 0;
 }
 .training-card {
@@ -485,8 +485,8 @@
   height: 0.4rem;
   margin: 1rem 0 1.5rem;
   overflow: hidden;
-  background: #26313b;
-  border-radius: 99px;
+  background: var(--border);
+  border-radius: 6px;
 }
 .training-progress span {
   display: block;
@@ -507,18 +507,18 @@
   padding: 0.85rem 1rem;
   text-align: left;
   color: var(--text);
-  background: #151b21;
+  background: var(--panel);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .chat-window {
   max-width: 620px;
   margin: 1.25rem auto 0;
   padding: 1rem;
-  background: #0f1419;
-  border: 1px solid #29343e;
-  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
 }
 .chat-messages {
   display: grid;
@@ -532,7 +532,7 @@
   width: fit-content;
   max-width: min(88%, 480px);
   padding: 0.65rem 0.85rem;
-  border-radius: 14px;
+  border-radius: 6px;
   animation: chat-message-in 0.24s ease-out both;
 }
 .chat-message p {
@@ -541,22 +541,22 @@
 }
 .chat-message-incoming {
   border-bottom-left-radius: 4px;
-  background: #202a33;
+  background: var(--panel);
 }
 .chat-message-outgoing {
   justify-self: end;
   border-bottom-right-radius: 4px;
-  color: #07111b;
+  color: var(--bg);
   background: var(--accent);
 }
 .chat-message-response {
   border-bottom-left-radius: 4px;
-  background: rgba(112, 214, 161, 0.15);
-  border: 1px solid rgba(112, 214, 161, 0.35);
+  background: color-mix(in srgb, var(--panel) 85%, var(--pmr));
+  border: 1px solid var(--pmr);
 }
 .chat-message-response.is-wrong {
-  background: rgba(255, 137, 150, 0.12);
-  border-color: rgba(255, 137, 150, 0.4);
+  background: color-mix(in srgb, var(--panel) 88%, var(--sos));
+  border-color: var(--sos);
 }
 .chat-author {
   display: block;
@@ -568,11 +568,11 @@
   text-transform: uppercase;
 }
 .chat-message-outgoing .chat-author {
-  color: rgba(7, 17, 27, 0.68);
+  color: color-mix(in srgb, var(--bg) 68%, transparent);
 }
 .chat-choices {
   padding-top: 0.85rem;
-  border-top: 1px solid #29343e;
+  border-top: 1px solid var(--border);
 }
 .chat-prompt {
   margin: 0;
@@ -581,27 +581,27 @@
   font-weight: 700;
 }
 .chat-window .training-option {
-  background: #182129;
+  background: var(--panel);
 }
 .chat-window .training-option:hover {
-  background: #26343f;
+  background: var(--border);
 }
 @keyframes chat-message-in {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 .training-option:hover {
   border-color: var(--accent);
-  background: #202b35;
+  background: var(--panel);
 }
 .training-option:disabled { cursor: default; }
 .training-option.is-correct {
   border-color: var(--pmr);
-  background: rgba(112, 214, 161, 0.14);
+  background: color-mix(in srgb, var(--panel) 86%, var(--pmr));
 }
 .training-option.is-wrong {
-  border-color: #ff8996;
-  background: rgba(255, 137, 150, 0.12);
+  border-color: var(--sos);
+  background: color-mix(in srgb, var(--panel) 88%, var(--sos));
 }
 .training-feedback {
   min-height: 3rem;
@@ -628,7 +628,7 @@
     padding: 0;
     background: none;
     border: 0;
-    box-shadow: none;
+  box-shadow: none;
   }
   .topbar .nav-static a {
     font-size: 0.78rem;
@@ -655,8 +655,8 @@
   .release-table tr {
     overflow: hidden;
     border: 1px solid var(--border);
-    border-radius: 10px;
-    background: #151c23;
+    border-radius: 6px;
+    background: var(--panel);
   }
   .release-table td {
     display: grid;
