@@ -16,15 +16,29 @@
       return success;
     }
 
+    function csvName(button) {
+      var channel = (button.getAttribute('data-copy-channel') || '').trim();
+      var band = (button.getAttribute('data-copy-band') || '').trim().toUpperCase();
+      if (band === 'PMR' && /^\d+$/.test(channel)) {
+        return 'PMR' + channel.padStart(2, '0');
+      }
+      return channel || (band ? band + '-CH' : 'KANAL');
+    }
+
+    function csvFrequency(button) {
+      var raw = button.getAttribute('data-copy-frequency') || '';
+      return raw.replace(/\s*MHz\s*/i, '').trim().replace(',', '.');
+    }
+
     function copy(button) {
-      var text = button.getAttribute('data-copy-frequency');
+      var text = 'Name,Frequency\n' + csvName(button) + ',' + csvFrequency(button);
       var result = navigator.clipboard && navigator.clipboard.writeText
         ? navigator.clipboard.writeText(text)
         : Promise.resolve(fallbackCopy(text));
       result.then(function (success) {
         if (success === false) throw new Error('copy failed');
         var original = button.textContent;
-        button.textContent = 'Zkopírováno';
+        button.textContent = 'CSV zkopírováno';
         button.classList.add('is-copied');
         window.setTimeout(function () {
           button.textContent = original;
