@@ -28,6 +28,13 @@ body {
 a { color: inherit; }
 img { max-width: 100%; display: block; }
 button, input, select { font: inherit; }
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent-strong);
+  outline-offset: 3px;
+}
 
 .wrap {
   width: min(var(--max), calc(100% - 2rem));
@@ -713,6 +720,7 @@ tbody tr:hover { background: rgba(99, 179, 255, 0.12); }
   margin: 0.65rem 0 0;
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .band-icon,
   .band-icon-city i { animation: none; }
 }

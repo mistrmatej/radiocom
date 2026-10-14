@@ -57,7 +57,9 @@
         tab.setAttribute('aria-selected', aktivni ? 'true' : 'false');
       });
       document.querySelectorAll('[data-band-panel]').forEach(function (panel) {
-        panel.classList.toggle('is-hidden', panel.getAttribute('data-band-panel') !== pasmo);
+        var skryty = panel.getAttribute('data-band-panel') !== pasmo;
+        panel.classList.toggle('is-hidden', skryty);
+        panel.setAttribute('aria-hidden', skryty ? 'true' : 'false');
       });
       document.querySelectorAll('.band-nav-link').forEach(function (link) {
         link.classList.toggle('is-active', link.getAttribute('data-band') === pasmo);
