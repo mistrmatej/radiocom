@@ -12,11 +12,65 @@
   --max: 1120px;
 }
 
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-ext-600-normal.woff2") format("woff2"),
+       url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("../fonts/barlow-condensed-latin-ext-700-normal.woff2") format("woff2"),
+       url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-ext-400-normal.woff2") format("woff2"),
+       url("../fonts/inter-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-ext-500-normal.woff2") format("woff2"),
+       url("../fonts/inter-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/jetbrains-mono-latin-ext-400-normal.woff2") format("woff2"),
+       url("../fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/jetbrains-mono-latin-ext-500-normal.woff2") format("woff2"),
+       url("../fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -167,8 +221,11 @@ input:focus-visible {
   margin: 0 0 1rem;
 }
 h1, h2, h3, h4 {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   margin: 0 0 0.75rem;
-  letter-spacing: -0.04em;
   line-height: 1.1;
 }
 h1 {
@@ -484,7 +541,8 @@ tbody tr:last-child td { border-bottom: none; }
 tbody tr:nth-child(even) { background: color-mix(in srgb, var(--panel) 96%, var(--text)); }
 tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent)); }
 .chan-table td:nth-child(n + 2) {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
 }
 .chan-table td:first-child {
