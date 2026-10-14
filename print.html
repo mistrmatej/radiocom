@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Radiocom | Rychlá karta</title>
-  <meta name="description" content="Tisková karta společných rádiových kanálů a nouzového postupu.">
+  <meta name="description" content="Jednostránkový přehled společných rádiových kanálů a frekvencí.">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/private.css">
@@ -12,52 +12,68 @@
 <body class="print-card-page">
   <main class="print-card">
     <header>
-      <p class="kicker">Radiocom</p>
-      <h1>Rychlá karta rádia</h1>
-      <p>Všichni musí mít stejné pásmo, kanál a případně tón.</p>
+      <h1>Radiocom · kanály a frekvence</h1>
     </header>
-    <section>
-      <h2>Všechny společné kanály</h2>
-      <table class="release-table print-table">
-        <thead><tr><th>Pásmo</th><th>Kanál</th><th>Frekvence</th><th>Max. výkon</th></tr></thead>
-        <tbody>
-          <tr><td>PMR446</td><td>1</td><td>446,00625 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>2</td><td>446,01875 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>3</td><td>446,03125 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>4</td><td>446,04375 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>5</td><td>446,05625 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>6</td><td>446,06875 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>7</td><td>446,08125 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>8</td><td>446,09375 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>9</td><td>446,10625 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>10</td><td>446,11875 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>11</td><td>446,13125 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>12</td><td>446,14375 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>13</td><td>446,15625 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>14</td><td>446,16875 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>15</td><td>446,18125 MHz</td><td>0,5 W</td></tr>
-          <tr><td>PMR446</td><td>16</td><td>446,19375 MHz</td><td>0,5 W</td></tr>
-          <tr><td>UHF</td><td>UHF1</td><td>448,490000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF2</td><td>448,570000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF3</td><td>448,610000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF4</td><td>449,770000 MHz</td><td>1 W</td></tr>
-          <tr><td>UHF</td><td>UHF5</td><td>449,810000 MHz</td><td>1 W</td></tr>
-          <tr><td>UHF</td><td>UHF6</td><td>442,200000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF7</td><td>442,225000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF8</td><td>442,250000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF</td><td>UHF9</td><td>442,275000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF</td><td>VHF1</td><td>172,650000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF</td><td>VHF2</td><td>172,725000 MHz</td><td>1 W</td></tr>
-          <tr><td>VHF</td><td>VHF3</td><td>172,950000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF</td><td>VHF4</td><td>172,975000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF</td><td>VHF5</td><td>173,050000 MHz</td><td>1 W</td></tr>
-        </tbody>
-      </table>
+    <section class="print-comparison" aria-label="Porovnání pásem">
+      <div><strong>PMR446</strong><span>běžné spojení · krátký dosah · max. 0,5 W</span></div>
+      <div><strong>UHF</strong><span>město, budovy a areály · max. 1–5 W</span></div>
+      <div><strong>VHF</strong><span>otevřený terén a krajina · max. 1–5 W</span></div>
     </section>
-    <section class="print-sos">
-      <h2>Nouze</h2>
-      <p><strong>SOS, SOS, SOS.</strong> Řekněte kdo volá, kde jste, co se stalo, kolik lidí potřebuje pomoc a co potřebujete.</p>
-      <p class="print-emergency"><strong>112</strong> — při ohrožení života nebo zdraví volejte záchranné složky.</p>
+    <section class="print-channels">
+      <article>
+        <h2>PMR446 <small>16 kanálů · 0,5 W</small></h2>
+        <table class="release-table print-table">
+          <thead><tr><th>Kanál</th><th>Frekvence</th></tr></thead>
+          <tbody>
+          <tr><td>1</td><td>446,00625 MHz</td></tr>
+          <tr><td>2</td><td>446,01875 MHz</td></tr>
+          <tr><td>3</td><td>446,03125 MHz</td></tr>
+          <tr><td>4</td><td>446,04375 MHz</td></tr>
+          <tr><td>5</td><td>446,05625 MHz</td></tr>
+          <tr><td>6</td><td>446,06875 MHz</td></tr>
+          <tr><td>7</td><td>446,08125 MHz</td></tr>
+          <tr><td>8</td><td>446,09375 MHz</td></tr>
+          <tr><td>9</td><td>446,10625 MHz</td></tr>
+          <tr><td>10</td><td>446,11875 MHz</td></tr>
+          <tr><td>11</td><td>446,13125 MHz</td></tr>
+          <tr><td>12</td><td>446,14375 MHz</td></tr>
+          <tr><td>13</td><td>446,15625 MHz</td></tr>
+          <tr><td>14</td><td>446,16875 MHz</td></tr>
+          <tr><td>15</td><td>446,18125 MHz</td></tr>
+          <tr><td>16</td><td>446,19375 MHz</td></tr>
+          </tbody>
+        </table>
+      </article>
+      <article>
+        <h2>UHF <small>9 kanálů · 1–5 W</small></h2>
+        <table class="release-table print-table">
+          <thead><tr><th>Kanál</th><th>Frekvence</th><th>Výkon</th></tr></thead>
+          <tbody>
+          <tr><td>UHF1</td><td>448,490000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF2</td><td>448,570000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF3</td><td>448,610000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF4</td><td>449,770000 MHz</td><td>1 W</td></tr>
+          <tr><td>UHF5</td><td>449,810000 MHz</td><td>1 W</td></tr>
+          <tr><td>UHF6</td><td>442,200000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF7</td><td>442,225000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF8</td><td>442,250000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF9</td><td>442,275000 MHz</td><td>5 W</td></tr>
+          </tbody>
+        </table>
+      </article>
+      <article>
+        <h2>VHF <small>5 kanálů · 1–5 W</small></h2>
+        <table class="release-table print-table">
+          <thead><tr><th>Kanál</th><th>Frekvence</th><th>Výkon</th></tr></thead>
+          <tbody>
+          <tr><td>VHF1</td><td>172,650000 MHz</td><td>5 W</td></tr>
+          <tr><td>VHF2</td><td>172,725000 MHz</td><td>1 W</td></tr>
+          <tr><td>VHF3</td><td>172,950000 MHz</td><td>5 W</td></tr>
+          <tr><td>VHF4</td><td>172,975000 MHz</td><td>5 W</td></tr>
+          <tr><td>VHF5</td><td>173,050000 MHz</td><td>1 W</td></tr>
+          </tbody>
+        </table>
+      </article>
     </section>
     <button class="btn btn-primary no-print" type="button" onclick="window.print()">Vytisknout kartu</button>
   </main>
