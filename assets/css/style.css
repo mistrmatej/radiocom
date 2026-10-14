@@ -391,6 +391,22 @@ h3 {
   border-color: var(--accent);
   color: #07111b;
 }
+.copy-frequency {
+  margin-left: 0.45rem;
+  padding: 0.18rem 0.38rem;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+.copy-frequency:hover,
+.copy-frequency.is-copied {
+  border-color: var(--success);
+  color: var(--success);
+}
 .is-hidden { display: none; }
 .channels-grid {
   display: grid;
@@ -669,6 +685,9 @@ tbody tr:hover { background: rgba(99, 179, 255, 0.12); }
 .sos-small {
   font-size: 0.9rem;
 }
+.mobile-sos {
+  display: none;
+}
 .sos-phrases {
   margin-top: 1.5rem;
   border: 1px solid #65323d;
@@ -736,4 +755,22 @@ tbody tr:hover { background: rgba(99, 179, 255, 0.12); }
   .channels-grid { grid-template-columns: 1fr; }
   .band-visual { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
+  .mobile-sos {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 25;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid #ffadb6;
+    border-radius: 50%;
+    background: #ff6879;
+    color: #260c11;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+    font-weight: 900;
+    text-decoration: none;
+  }
 }

@@ -5,16 +5,17 @@ import { formatMHz, pmrChannels, uhfChannels, vhfChannels } from './channels-dat
 const projectRoot = fileURLToPath(new URL('..', import.meta.url));
 
 function pmrRows() {
+  const frequencyCell = frequency => `<td><span>${formatMHz(frequency)}</span><button class="copy-frequency" type="button" data-copy-frequency="${formatMHz(frequency)} MHz">Kopírovat</button></td>`;
   return Array.from({ length: 8 }, (_, index) => {
     const first = pmrChannels[index];
     const second = pmrChannels[index + 8];
-    return `<tr><td>${first.name}</td><td>${formatMHz(first.frequency)}</td><td>${second.name}</td><td>${formatMHz(second.frequency)}</td></tr>`;
+    return `<tr><td>${first.name}</td>${frequencyCell(first.frequency)}<td>${second.name}</td>${frequencyCell(second.frequency)}</tr>`;
   }).join('\n          ');
 }
 
 function channelRows(channels) {
   return channels.map(([name, frequency, power]) =>
-    `<tr><td>${name}</td><td>${frequency} MHz</td><td>${power}</td></tr>`
+    `<tr><td>${name}</td><td><span>${frequency} MHz</span><button class="copy-frequency" type="button" data-copy-frequency="${frequency} MHz">Kopírovat</button></td><td>${power}</td></tr>`
   ).join('\n          ');
 }
 

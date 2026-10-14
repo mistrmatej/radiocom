@@ -12,6 +12,45 @@
         return;
       }
 
+      function kopirovaniFrekvenci() {
+        function fallbackCopy(text) {
+          var area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'fixed';
+          area.style.opacity = '0';
+          document.body.appendChild(area);
+          area.select();
+          var success = document.execCommand('copy');
+          area.remove();
+          return success;
+        }
+
+        function copy(button) {
+          var text = button.getAttribute('data-copy-frequency');
+          var result = navigator.clipboard && navigator.clipboard.writeText
+            ? navigator.clipboard.writeText(text)
+            : Promise.resolve(fallbackCopy(text));
+          result.then(function (success) {
+            if (success === false) throw new Error('copy failed');
+            var original = button.textContent;
+            button.textContent = 'Zkopírováno';
+            button.classList.add('is-copied');
+            window.setTimeout(function () {
+              button.textContent = original;
+              button.classList.remove('is-copied');
+            }, 1400);
+          }).catch(function () {
+            button.textContent = 'Kopírování selhalo';
+            window.setTimeout(function () { button.textContent = 'Kopírovat'; }, 1800);
+          });
+        }
+
+        document.querySelectorAll('[data-copy-frequency]').forEach(function (button) {
+          button.addEventListener('click', function () { copy(button); });
+        });
+      }
+
       document.querySelectorAll('.channel-tab').forEach(function (tab) {
         var aktivni = tab === cilovaZalozka;
         tab.classList.toggle('is-active', aktivni);
@@ -31,7 +70,10 @@
         if (button.classList.contains('band-nav-link')) {
           event.preventDefault();
           var cil = document.getElementById(pasmo === 'pmr' ? 'pmr446' : pasmo);
-          if (cil) cil.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (cil) cil.scrollIntoView({
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            block: 'start'
+          });
         }
         vybratPasmo(pasmo);
       });
@@ -105,8 +147,8 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); });
+    document.addEventListener('DOMContentLoaded', function () { prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci(); });
   } else {
-    prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce();
+    prepinaniPasem(); vysvetleniPasem(); menu(); otevrene(); aktivniSekce(); kopirovaniFrekvenci();
   }
 })();

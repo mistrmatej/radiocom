@@ -114,6 +114,11 @@
           <h2>Společné frekvence</h2>
           <p class="lead-sm">Použijte stejné pásmo, kanál a tón jako ostatní.</p>
         </div>
+        <div class="channel-tabs" role="tablist" aria-label="Přepnout rádiové pásmo">
+          <button class="channel-tab is-active" type="button" role="tab" aria-selected="true" data-band="pmr">PMR446</button>
+          <button class="channel-tab" type="button" role="tab" aria-selected="false" data-band="uhf">UHF</button>
+          <button class="channel-tab" type="button" role="tab" aria-selected="false" data-band="vhf">VHF</button>
+        </div>
         <div class="channels-grid">
           <article id="pmr446" class="panel channel-panel">
             <h3>PMR446</h3>
@@ -129,14 +134,14 @@
                   </thead>
                   <tbody>
                     <!-- channels-pmr:start -->
-          <tr><td>1</td><td>446,00625</td><td>9</td><td>446,10625</td></tr>
-          <tr><td>2</td><td>446,01875</td><td>10</td><td>446,11875</td></tr>
-          <tr><td>3</td><td>446,03125</td><td>11</td><td>446,13125</td></tr>
-          <tr><td>4</td><td>446,04375</td><td>12</td><td>446,14375</td></tr>
-          <tr><td>5</td><td>446,05625</td><td>13</td><td>446,15625</td></tr>
-          <tr><td>6</td><td>446,06875</td><td>14</td><td>446,16875</td></tr>
-          <tr><td>7</td><td>446,08125</td><td>15</td><td>446,18125</td></tr>
-          <tr><td>8</td><td>446,09375</td><td>16</td><td>446,19375</td></tr>
+          <tr><td>1</td><td><span>446,00625</span><button class="copy-frequency" type="button" data-copy-frequency="446,00625 MHz">Kopírovat</button></td><td>9</td><td><span>446,10625</span><button class="copy-frequency" type="button" data-copy-frequency="446,10625 MHz">Kopírovat</button></td></tr>
+          <tr><td>2</td><td><span>446,01875</span><button class="copy-frequency" type="button" data-copy-frequency="446,01875 MHz">Kopírovat</button></td><td>10</td><td><span>446,11875</span><button class="copy-frequency" type="button" data-copy-frequency="446,11875 MHz">Kopírovat</button></td></tr>
+          <tr><td>3</td><td><span>446,03125</span><button class="copy-frequency" type="button" data-copy-frequency="446,03125 MHz">Kopírovat</button></td><td>11</td><td><span>446,13125</span><button class="copy-frequency" type="button" data-copy-frequency="446,13125 MHz">Kopírovat</button></td></tr>
+          <tr><td>4</td><td><span>446,04375</span><button class="copy-frequency" type="button" data-copy-frequency="446,04375 MHz">Kopírovat</button></td><td>12</td><td><span>446,14375</span><button class="copy-frequency" type="button" data-copy-frequency="446,14375 MHz">Kopírovat</button></td></tr>
+          <tr><td>5</td><td><span>446,05625</span><button class="copy-frequency" type="button" data-copy-frequency="446,05625 MHz">Kopírovat</button></td><td>13</td><td><span>446,15625</span><button class="copy-frequency" type="button" data-copy-frequency="446,15625 MHz">Kopírovat</button></td></tr>
+          <tr><td>6</td><td><span>446,06875</span><button class="copy-frequency" type="button" data-copy-frequency="446,06875 MHz">Kopírovat</button></td><td>14</td><td><span>446,16875</span><button class="copy-frequency" type="button" data-copy-frequency="446,16875 MHz">Kopírovat</button></td></tr>
+          <tr><td>7</td><td><span>446,08125</span><button class="copy-frequency" type="button" data-copy-frequency="446,08125 MHz">Kopírovat</button></td><td>15</td><td><span>446,18125</span><button class="copy-frequency" type="button" data-copy-frequency="446,18125 MHz">Kopírovat</button></td></tr>
+          <tr><td>8</td><td><span>446,09375</span><button class="copy-frequency" type="button" data-copy-frequency="446,09375 MHz">Kopírovat</button></td><td>16</td><td><span>446,19375</span><button class="copy-frequency" type="button" data-copy-frequency="446,19375 MHz">Kopírovat</button></td></tr>
           <!-- channels-pmr:end -->
                   </tbody>
                 </table>
@@ -154,15 +159,15 @@
               </thead>
               <tbody>
                 <!-- channels-uhf:start -->
-          <tr><td>UHF1</td><td>448,490000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF2</td><td>448,570000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF3</td><td>448,610000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF4</td><td>449,770000 MHz</td><td>1 W</td></tr>
-          <tr><td>UHF5</td><td>449,810000 MHz</td><td>1 W</td></tr>
-          <tr><td>UHF6</td><td>442,200000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF7</td><td>442,225000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF8</td><td>442,250000 MHz</td><td>5 W</td></tr>
-          <tr><td>UHF9</td><td>442,275000 MHz</td><td>5 W</td></tr>
+          <tr><td>UHF1</td><td><span>448,490000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,490000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF2</td><td><span>448,570000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,570000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF3</td><td><span>448,610000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,610000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF4</td><td><span>449,770000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="449,770000 MHz">Kopírovat</button></td><td>1 W</td></tr>
+          <tr><td>UHF5</td><td><span>449,810000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="449,810000 MHz">Kopírovat</button></td><td>1 W</td></tr>
+          <tr><td>UHF6</td><td><span>442,200000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,200000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF7</td><td><span>442,225000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,225000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF8</td><td><span>442,250000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,250000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>UHF9</td><td><span>442,275000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,275000 MHz">Kopírovat</button></td><td>5 W</td></tr>
           <!-- channels-uhf:end -->
               </tbody>
               </table>
@@ -179,11 +184,11 @@
               </thead>
               <tbody>
                 <!-- channels-vhf:start -->
-          <tr><td>VHF1</td><td>172,650000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF2</td><td>172,725000 MHz</td><td>1 W</td></tr>
-          <tr><td>VHF3</td><td>172,950000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF4</td><td>172,975000 MHz</td><td>5 W</td></tr>
-          <tr><td>VHF5</td><td>173,050000 MHz</td><td>1 W</td></tr>
+          <tr><td>VHF1</td><td><span>172,650000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,650000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>VHF2</td><td><span>172,725000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,725000 MHz">Kopírovat</button></td><td>1 W</td></tr>
+          <tr><td>VHF3</td><td><span>172,950000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,950000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>VHF4</td><td><span>172,975000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,975000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr><td>VHF5</td><td><span>173,050000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="173,050000 MHz">Kopírovat</button></td><td>1 W</td></tr>
           <!-- channels-vhf:end -->
               </tbody>
               </table>
@@ -321,6 +326,7 @@
       <p>Radiocom — Matěj Albert</p>
     </div>
   </footer>
+  <a class="mobile-sos" href="#sos">SOS</a>
 
   <script src="assets/js/site.js"></script>
   <script src="assets/js/pwa.js"></script>
