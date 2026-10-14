@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radiocom-v2';
+const CACHE_NAME = 'radiocom-v3';
 const APP_SHELL = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const APP_SHELL = [
   './team.html',
   './trenink.html',
   './print.html',
+  './manifest.json',
   './assets/css/style.css',
   './assets/css/private.css',
   './assets/brand/radiocom-mark.svg',
@@ -17,6 +18,18 @@ const APP_SHELL = [
   './assets/js/downloads.js',
   './assets/js/downloads-data.js',
   './assets/js/pwa.js',
+  './assets/fonts/barlow-condensed-latin-600-normal.woff2',
+  './assets/fonts/barlow-condensed-latin-700-normal.woff2',
+  './assets/fonts/barlow-condensed-latin-ext-600-normal.woff2',
+  './assets/fonts/barlow-condensed-latin-ext-700-normal.woff2',
+  './assets/fonts/inter-latin-400-normal.woff2',
+  './assets/fonts/inter-latin-500-normal.woff2',
+  './assets/fonts/inter-latin-ext-400-normal.woff2',
+  './assets/fonts/inter-latin-ext-500-normal.woff2',
+  './assets/fonts/jetbrains-mono-latin-400-normal.woff2',
+  './assets/fonts/jetbrains-mono-latin-500-normal.woff2',
+  './assets/fonts/jetbrains-mono-latin-ext-400-normal.woff2',
+  './assets/fonts/jetbrains-mono-latin-ext-500-normal.woff2',
   './assets/vendor/leaflet/leaflet.css',
   './assets/vendor/leaflet/leaflet.js'
 ];
