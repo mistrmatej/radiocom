@@ -5,15 +5,36 @@ window.RADIOCOM_DOWNLOADS = [
     "notes": "Před nahráním si zálohujte původní konfiguraci radiostanice.",
     "files": [
       {
-        "name": "Baofeng_5RM_20261005_SKIP_LICENSED.img",
-        "path": "assets/downloads/uv-5rm/Baofeng_5RM_20261005_SKIP_LICENSED.img",
+        "name": "Baofeng_5RM_SKIP_LICENSED.img",
+        "path": "assets/downloads/uv-5rm/Baofeng_5RM_SKIP_LICENSED.img",
         "extension": "IMG",
         "size": 33841,
-        "description": "PMR446 + licencované kanály; ověřte nastavení před nahráním."
+        "description": "TX konfigurace pro oprávněný radioamatérský provoz; ověřte místní podmínky."
       },
       {
-        "name": "Baofeng_5RM_20261005_TOBI_TEST.img",
-        "path": "assets/downloads/uv-5rm/Baofeng_5RM_20261005_TOBI_TEST.img",
+        "name": "Baofeng_5RM_TOBI_TEST_PRAHA_LICENSED_AIR_MARINE.img",
+        "path": "assets/downloads/uv-5rm/Baofeng_5RM_TOBI_TEST_PRAHA_LICENSED_AIR_MARINE.img",
+        "extension": "IMG",
+        "size": 33841,
+        "description": "Licencovaná TX konfigurace plus letecké a námořní RX-only kanály."
+      },
+      {
+        "name": "Baofeng_5RM_TOBI_TEST_PRAHA_LICENSED.img",
+        "path": "assets/downloads/uv-5rm/Baofeng_5RM_TOBI_TEST_PRAHA_LICENSED.img",
+        "extension": "IMG",
+        "size": 33841,
+        "description": "TX konfigurace pro oprávněný radioamatérský provoz; ověřte místní podmínky."
+      },
+      {
+        "name": "Baofeng_5RM_TOBI_TEST_PRAHA_RX.img",
+        "path": "assets/downloads/uv-5rm/Baofeng_5RM_TOBI_TEST_PRAHA_RX.img",
+        "extension": "IMG",
+        "size": 33841,
+        "description": "Pražské RX-only kanály; vysílání je zakázané."
+      },
+      {
+        "name": "Baofeng_5RM_TOBI_TEST.img",
+        "path": "assets/downloads/uv-5rm/Baofeng_5RM_TOBI_TEST.img",
         "extension": "IMG",
         "size": 33857,
         "description": "Testovací konfigurace; nepoužívat bez ověření."

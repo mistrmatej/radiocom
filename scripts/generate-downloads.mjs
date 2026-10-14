@@ -12,6 +12,9 @@ const radios = [
 
 function describeFile(name) {
   const normalized = name.toLowerCase();
+  if (normalized.includes('air_marine')) return 'Licencovaná TX konfigurace plus letecké a námořní RX-only kanály.';
+  if (normalized.includes('licensed')) return 'TX konfigurace pro oprávněný radioamatérský provoz; ověřte místní podmínky.';
+  if (normalized.includes('praha_rx')) return 'Pražské RX-only kanály; vysílání je zakázané.';
   if (normalized.includes('skip_licensed')) return 'PMR446 + licencované kanály; ověřte nastavení před nahráním.';
   if (normalized.includes('tobi_test')) return 'Testovací konfigurace; nepoužívat bez ověření.';
   if (normalized.includes('fullpmr446')) return 'Plná konfigurace PMR446.';

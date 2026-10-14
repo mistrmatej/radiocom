@@ -38,11 +38,11 @@
       meta.textContent = file.size.toLocaleString('cs-CZ') + ' B · nalezeno ' + frequencies.length + ' frekvencí';
       body.innerHTML = '';
       if (!frequencies.length) {
-        body.innerHTML = '<tr><td colspan="3">V tomto obrazu se nepodařilo najít známý formát frekvencí.</td></tr>';
+        body.innerHTML = '<tr><td colspan="3" class="release-empty">V tomto obrazu se nepodařilo najít známý formát frekvencí.</td></tr>';
       } else {
         frequencies.forEach(function (frequency, index) {
           var row = document.createElement('tr');
-          row.innerHTML = '<td></td><td></td><td></td>';
+          row.innerHTML = '<td data-label="Kanál"></td><td data-label="Frekvence"></td><td data-label="Hodnota"></td>';
           row.children[0].textContent = index + 1;
           row.children[1].textContent = formatFrequency(frequency);
           row.children[2].textContent = '0x' + frequency.toString(16).toUpperCase();
