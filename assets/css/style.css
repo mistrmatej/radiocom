@@ -418,6 +418,12 @@ h3 {
   margin-bottom: 0.7rem;
   font-size: 0.88rem;
 }
+.band-licence-note {
+  margin: -0.2rem 0 0.75rem;
+  color: var(--dim);
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--line);
