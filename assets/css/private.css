@@ -747,6 +747,22 @@
     font-size: 6.5pt;
   }
   .print-card-page {
-    background: #fff;
+    background: #fff !important;
+    color: #111 !important;
+  }
+  .print-card-page .print-card,
+  .print-card-page .print-comparison > div,
+  .print-card-page .print-sos {
+    background: #fff !important;
+    color: #111 !important;
+    border-color: #b9c2ca !important;
+  }
+  .print-card-page h1,
+  .print-card-page h2,
+  .print-card-page p,
+  .print-card-page th,
+  .print-card-page td,
+  .print-card-page summary {
+    color: #111 !important;
   }
 }
