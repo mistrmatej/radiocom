@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0E1214">
+  <title>Radiocom | Ztráta signálu</title>
+  <meta name="description" content="Požadovaná stránka se neozývá. Zkuste naladit jiný kanál.">
+  <link rel="icon" href="/radiocom/assets/brand/radiocom-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/radiocom/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/radiocom/manifest.json">
+  <link rel="stylesheet" href="/radiocom/assets/css/style.css">
+  <link rel="stylesheet" href="/radiocom/assets/css/404.css">
+</head>
+<body class="error-page">
+  <main class="error-shell">
+    <section class="error-console" aria-labelledby="error-title">
+      <p class="error-kicker">Radiocom / nouzový příjem</p>
+      <div class="radio-display" aria-label="Chybový kód 404">
+        <span class="radio-display-noise" aria-hidden="true"></span>
+        <span class="radio-display-code">404</span>
+        <span class="radio-display-label">NO SIGNAL</span>
+      </div>
+
+      <div class="error-copy">
+        <h1 id="error-title">Kanál 404 je prázdný</h1>
+        <p class="radio-dialog">Radiocom volá stránku. Příjem?</p>
+        <p class="radio-dialog radio-dialog-response">…</p>
+        <p class="radio-dialog">Stránka neodpovídá. Zkusíme jiný kanál.</p>
+        <p id="radio-message" class="radio-message" aria-live="polite">
+          Jste mimo dosah. Signál se tváří, že nikdy neexistoval.
+        </p>
+      </div>
+
+      <div class="tuning-panel">
+        <div class="tuning-head">
+          <label for="channel-tuning">Ladění kanálu</label>
+          <output id="channel-value" for="channel-tuning">404 / 800</output>
+        </div>
+        <input id="channel-tuning" type="range" min="0" max="800" value="404" aria-describedby="tuning-help">
+        <p id="tuning-help">Otáčejte laděním. Správná frekvence je podezřele blízko.</p>
+      </div>
+
+      <div id="connection" class="connection-panel">
+        <strong>Spojení navázáno</strong>
+        <span>Rádio znovu našlo základnu. To bude tím laděním.</span>
+        <div class="error-links">
+          <a class="error-link" href="/radiocom/">Domů</a>
+          <a class="error-link" href="/radiocom/#kanaly">Kanály</a>
+          <a class="error-link error-link-sos" href="/radiocom/#sos">SOS</a>
+        </div>
+      </div>
+
+      <div class="error-actions">
+        <button id="ptt-button" class="ptt-button" type="button">PTT / Mluvit</button>
+        <p id="ptt-response" class="ptt-response" aria-live="polite">Připraveno k vysílání.</p>
+      </div>
+
+      <noscript>
+        <p class="no-script-note">JavaScript je vypnutý. Signál se nehýbe, ale odkazy výše fungují.</p>
+      </noscript>
+    </section>
+  </main>
+  <script src="/radiocom/assets/js/404.js"></script>
+  <script src="/radiocom/assets/js/pwa.js"></script>
+</body>
+</html>
