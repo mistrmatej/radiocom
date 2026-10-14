@@ -1,6 +1,7 @@
-const CACHE_NAME = 'radiocom-v3';
+const CACHE_NAME = 'radiocom-v4';
 const APP_SHELL = [
   './',
+  './404.html',
   './index.html',
   './friends.html',
   './images.html',
@@ -9,11 +10,13 @@ const APP_SHELL = [
   './print.html',
   './manifest.json',
   './assets/css/style.css',
+  './assets/css/404.css',
   './assets/css/private.css',
   './assets/brand/radiocom-mark.svg',
   './assets/brand/radiocom-social.svg',
   './assets/brand/apple-touch-icon.png',
   './assets/js/site.js',
+  './assets/js/404.js',
   './assets/js/private.js',
   './assets/js/downloads.js',
   './assets/js/downloads-data.js',
@@ -51,10 +54,16 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
   event.respondWith(
-    caches.match(event.request).then(cached => cached || fetch(event.request).then(response => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
-      return response;
-    }))
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+      return fetch(event.request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        return response;
+      }).catch(() => {
+        if (event.request.mode === 'navigate') return caches.match('./404.html');
+        throw new Error('Offline resource unavailable');
+      });
+    })
   );
 });
