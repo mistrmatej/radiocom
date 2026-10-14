@@ -347,6 +347,13 @@ h3 {
   color: var(--muted);
 }
 .note strong { color: var(--text); }
+.tone-note {
+  max-width: 760px;
+  margin-top: 1.25rem;
+}
+.tone-note p {
+  margin: 0.35rem 0 0;
+}
 
 .panel {
   background: var(--panel);
