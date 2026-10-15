@@ -209,29 +209,6 @@ button:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
   padding: clamp(4rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 4.5rem);
   border-bottom: 1px solid var(--border);
 }
-.hero-copy { position: relative; }
-.signal-icon {
-  width: 9rem;
-  height: 5.5rem;
-  margin: -1rem 0 0.3rem;
-  color: var(--accent);
-  opacity: 0.85;
-  transform-origin: 50% 80%;
-  animation: signal-pulse 3.8s ease-in-out infinite;
-}
-.signal-icon svg,
-.step-icon svg,
-.page-signal-icon svg,
-.card-signal-icon svg,
-.print-signal-icon svg {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 3;
-}
 .hero-inner {
   display: grid;
   grid-template-columns: 1.5fr 0.9fr;
@@ -384,28 +361,7 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
 }
-.step {
-  position: relative;
-  overflow: hidden;
-  padding: 1.5rem 1.25rem;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-.step:hover {
-  transform: translateY(-0.3rem);
-  border-color: color-mix(in srgb, var(--accent) 65%, var(--border));
-}
-.step-icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 3.6rem;
-  height: 3.6rem;
-  color: var(--accent);
-  opacity: 0.7;
-  animation: icon-float 3.4s ease-in-out infinite;
-}
-.step:nth-child(2) .step-icon { color: var(--pmr); animation-delay: -0.8s; }
-.step:nth-child(3) .step-icon { color: var(--uhf); animation-delay: -1.6s; }
+.step { padding: 1.5rem 1.25rem; }
 .step-number {
   width: 2.2rem;
   height: 2.2rem;
@@ -749,24 +705,6 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   0%, 100% { transform: rotate(-2deg); }
   50% { transform: rotate(2deg); }
 }
-@keyframes signal-pulse {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.72; }
-  50% { transform: translateY(-0.35rem) scale(1.04); opacity: 1; }
-}
-.hero-panel {
-  animation: panel-arrive 0.7s ease-out both;
-}
-.hero-panel .quick-link {
-  transition: transform 0.25s ease, background 0.25s ease;
-}
-.hero-panel .quick-link:hover {
-  transform: translateX(0.35rem);
-  background: color-mix(in srgb, var(--panel) 75%, var(--accent));
-}
-@keyframes panel-arrive {
-  from { opacity: 0; transform: translateY(0.8rem); }
-  to { opacity: 1; transform: translateY(0); }
-}
 .band-note {
   color: var(--muted);
   margin: 1rem 0 0;
@@ -892,8 +830,6 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   }
   .band-icon,
   .band-icon-city i,
-  .signal-icon,
-  .step-icon,
   .hero-panel { animation: none; }
 }
 
@@ -936,7 +872,6 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   .channels-grid { grid-template-columns: 1fr; }
   .band-visual { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
-  .signal-icon { width: 7rem; height: 4.5rem; }
   .hero-copy { max-width: 38rem; }
   .hero-actions .btn { flex: 1 1 10rem; }
   .channel-panel { padding: 1rem; }
