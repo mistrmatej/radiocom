@@ -40,6 +40,14 @@
       <div class="wrap hero-inner">
         <div class="hero-copy">
           <p class="kicker">Interní přehled</p>
+          <div class="signal-icon signal-icon-hero" aria-hidden="true">
+            <svg viewBox="0 0 160 100" role="presentation">
+              <path d="M80 74V20"></path><path d="m80 20-10 12h20z"></path>
+              <path d="M48 42c-10 10-10 26 0 36"></path><path d="M112 42c10 10 10 26 0 36"></path>
+              <path d="M35 30c-18 17-18 43 0 60"></path><path d="M125 30c18 17 18 43 0 60"></path>
+              <circle cx="80" cy="77" r="5"></circle>
+            </svg>
+          </div>
             <h1>Rádiové spojení</h1>
             <p class="lead">
               Kanály a frekvence, které používáme. Nastavte stejné pásmo a kanál jako ostatní.
@@ -83,18 +91,21 @@
 
         <div class="steps">
           <article class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 34V10"></path><path d="m24 10-6 8h12z"></path><circle cx="24" cy="36" r="7"></circle></svg></span>
             <span class="step-number">1</span>
             <h3>Nastavit kanál/frekvenci</h3>
             <p>Použijte rádio, které podporuje pásmo, na kterém se chcete spojit.</p>
           </article>
 
           <article class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="16" cy="24" r="7"></circle><circle cx="32" cy="24" r="7"></circle><path d="M23 24h2"></path></svg></span>
             <span class="step-number">2</span>
             <h3>Domluvit kanál</h3>
             <p>Všichni musí používat stejný kanál a případně stejný tón. Potom se domluvíte a máte hotovo.</p>
           </article>
 
           <article class="step">
+            <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 24h28"></path><path d="m30 16 8 8-8 8"></path><path d="M10 16v16"></path></svg></span>
             <span class="step-number">3</span>
             <h3>Poslechnout a mluvit</h3>
             <p>Nejprve zkontrolujte, jestli je kanál volný. Potom krátce a srozumitelně vysílejte.</p>
@@ -112,7 +123,7 @@
         <div class="section-head">
           <p class="kicker">Kanály</p>
           <h2>Společné frekvence</h2>
-          <p class="lead-sm">Použijte stejné pásmo, kanál a tón jako ostatní.</p>
+          <p class="lead-sm">Použijte stejné pásmo, kanál a tón jako ostatní. Tlačítko <strong>Kopírovat CSV</strong> zkopíruje řádek rovnou pro import do CHIRP.</p>
         </div>
         <div class="channels-grid">
           <article id="pmr446" class="panel channel-panel">
@@ -129,14 +140,14 @@
                   </thead>
                   <tbody>
                     <!-- channels-pmr:start -->
-          <tr><td>1</td><td><span>446,00625</span><button class="copy-frequency" type="button" data-copy-frequency="446,00625 MHz">Kopírovat</button></td><td>9</td><td><span>446,10625</span><button class="copy-frequency" type="button" data-copy-frequency="446,10625 MHz">Kopírovat</button></td></tr>
-          <tr><td>2</td><td><span>446,01875</span><button class="copy-frequency" type="button" data-copy-frequency="446,01875 MHz">Kopírovat</button></td><td>10</td><td><span>446,11875</span><button class="copy-frequency" type="button" data-copy-frequency="446,11875 MHz">Kopírovat</button></td></tr>
-          <tr><td>3</td><td><span>446,03125</span><button class="copy-frequency" type="button" data-copy-frequency="446,03125 MHz">Kopírovat</button></td><td>11</td><td><span>446,13125</span><button class="copy-frequency" type="button" data-copy-frequency="446,13125 MHz">Kopírovat</button></td></tr>
-          <tr><td>4</td><td><span>446,04375</span><button class="copy-frequency" type="button" data-copy-frequency="446,04375 MHz">Kopírovat</button></td><td>12</td><td><span>446,14375</span><button class="copy-frequency" type="button" data-copy-frequency="446,14375 MHz">Kopírovat</button></td></tr>
-          <tr><td>5</td><td><span>446,05625</span><button class="copy-frequency" type="button" data-copy-frequency="446,05625 MHz">Kopírovat</button></td><td>13</td><td><span>446,15625</span><button class="copy-frequency" type="button" data-copy-frequency="446,15625 MHz">Kopírovat</button></td></tr>
-          <tr><td>6</td><td><span>446,06875</span><button class="copy-frequency" type="button" data-copy-frequency="446,06875 MHz">Kopírovat</button></td><td>14</td><td><span>446,16875</span><button class="copy-frequency" type="button" data-copy-frequency="446,16875 MHz">Kopírovat</button></td></tr>
-          <tr><td>7</td><td><span>446,08125</span><button class="copy-frequency" type="button" data-copy-frequency="446,08125 MHz">Kopírovat</button></td><td>15</td><td><span>446,18125</span><button class="copy-frequency" type="button" data-copy-frequency="446,18125 MHz">Kopírovat</button></td></tr>
-          <tr><td>8</td><td><span>446,09375</span><button class="copy-frequency" type="button" data-copy-frequency="446,09375 MHz">Kopírovat</button></td><td>16</td><td><span>446,19375</span><button class="copy-frequency" type="button" data-copy-frequency="446,19375 MHz">Kopírovat</button></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR1 a PMR9 jako CSV" data-copy-frequency="1,PMR1,446.00625,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="9,PMR9,446.10625,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>1</td><td><span>446,00625</span></td><td>9</td><td><span>446,10625</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR2 a PMR10 jako CSV" data-copy-frequency="2,PMR2,446.01875,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="10,PMR10,446.11875,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>2</td><td><span>446,01875</span></td><td>10</td><td><span>446,11875</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR3 a PMR11 jako CSV" data-copy-frequency="3,PMR3,446.03125,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="11,PMR11,446.13125,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>3</td><td><span>446,03125</span></td><td>11</td><td><span>446,13125</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR4 a PMR12 jako CSV" data-copy-frequency="4,PMR4,446.04375,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="12,PMR12,446.14375,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>4</td><td><span>446,04375</span></td><td>12</td><td><span>446,14375</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR5 a PMR13 jako CSV" data-copy-frequency="5,PMR5,446.05625,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="13,PMR13,446.15625,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>5</td><td><span>446,05625</span></td><td>13</td><td><span>446,15625</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR6 a PMR14 jako CSV" data-copy-frequency="6,PMR6,446.06875,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="14,PMR14,446.16875,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>6</td><td><span>446,06875</span></td><td>14</td><td><span>446,16875</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR7 a PMR15 jako CSV" data-copy-frequency="7,PMR7,446.08125,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="15,PMR15,446.18125,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>7</td><td><span>446,08125</span></td><td>15</td><td><span>446,18125</span></td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR8 a PMR16 jako CSV" data-copy-frequency="8,PMR8,446.09375,,0.000000,,,,,NN,FM,12.50,,PMR446" data-copy-frequency-secondary="16,PMR16,446.19375,,0.000000,,,,,NN,FM,12.50,,PMR446"><td>8</td><td><span>446,09375</span></td><td>16</td><td><span>446,19375</span></td></tr>
           <!-- channels-pmr:end -->
                   </tbody>
                 </table>
@@ -154,15 +165,15 @@
               </thead>
               <tbody>
                 <!-- channels-uhf:start -->
-          <tr><td>UHF1</td><td><span>448,490000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,490000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF2</td><td><span>448,570000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,570000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF3</td><td><span>448,610000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="448,610000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF4</td><td><span>449,770000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="449,770000 MHz">Kopírovat</button></td><td>1 W</td></tr>
-          <tr><td>UHF5</td><td><span>449,810000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="449,810000 MHz">Kopírovat</button></td><td>1 W</td></tr>
-          <tr><td>UHF6</td><td><span>442,200000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,200000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF7</td><td><span>442,225000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,225000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF8</td><td><span>442,250000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,250000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>UHF9</td><td><span>442,275000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="442,275000 MHz">Kopírovat</button></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF1 jako CSV" data-copy-frequency="1,UHF1,448.490000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF1</td><td><span>448,490000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF2 jako CSV" data-copy-frequency="2,UHF2,448.570000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF2</td><td><span>448,570000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF3 jako CSV" data-copy-frequency="3,UHF3,448.610000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF3</td><td><span>448,610000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF4 jako CSV" data-copy-frequency="4,UHF4,449.770000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF4</td><td><span>449,770000 MHz</span></td><td>1 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF5 jako CSV" data-copy-frequency="5,UHF5,449.810000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF5</td><td><span>449,810000 MHz</span></td><td>1 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF6 jako CSV" data-copy-frequency="6,UHF6,442.200000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF6</td><td><span>442,200000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF7 jako CSV" data-copy-frequency="7,UHF7,442.225000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF7</td><td><span>442,225000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF8 jako CSV" data-copy-frequency="8,UHF8,442.250000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF8</td><td><span>442,250000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat UHF9 jako CSV" data-copy-frequency="9,UHF9,442.275000,,0.000000,,,,,NN,FM,12.50,,UHF"><td>UHF9</td><td><span>442,275000 MHz</span></td><td>5 W</td></tr>
           <!-- channels-uhf:end -->
               </tbody>
               </table>
@@ -179,11 +190,11 @@
               </thead>
               <tbody>
                 <!-- channels-vhf:start -->
-          <tr><td>VHF1</td><td><span>172,650000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,650000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>VHF2</td><td><span>172,725000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,725000 MHz">Kopírovat</button></td><td>1 W</td></tr>
-          <tr><td>VHF3</td><td><span>172,950000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,950000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>VHF4</td><td><span>172,975000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="172,975000 MHz">Kopírovat</button></td><td>5 W</td></tr>
-          <tr><td>VHF5</td><td><span>173,050000 MHz</span><button class="copy-frequency" type="button" data-copy-frequency="173,050000 MHz">Kopírovat</button></td><td>1 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat VHF1 jako CSV" data-copy-frequency="1,VHF1,172.650000,,0.000000,,,,,NN,FM,12.50,,VHF"><td>VHF1</td><td><span>172,650000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat VHF2 jako CSV" data-copy-frequency="2,VHF2,172.725000,,0.000000,,,,,NN,FM,12.50,,VHF"><td>VHF2</td><td><span>172,725000 MHz</span></td><td>1 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat VHF3 jako CSV" data-copy-frequency="3,VHF3,172.950000,,0.000000,,,,,NN,FM,12.50,,VHF"><td>VHF3</td><td><span>172,950000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat VHF4 jako CSV" data-copy-frequency="4,VHF4,172.975000,,0.000000,,,,,NN,FM,12.50,,VHF"><td>VHF4</td><td><span>172,975000 MHz</span></td><td>5 W</td></tr>
+          <tr class="copy-row" tabindex="0" aria-label="Kopírovat VHF5 jako CSV" data-copy-frequency="5,VHF5,173.050000,,0.000000,,,,,NN,FM,12.50,,VHF"><td>VHF5</td><td><span>173,050000 MHz</span></td><td>1 W</td></tr>
           <!-- channels-vhf:end -->
               </tbody>
               </table>

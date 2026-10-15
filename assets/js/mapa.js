@@ -460,10 +460,10 @@
     L.polygon(prstenec(vysledky, lat, lon), {
       className: 'zone-signal',
       stroke: true,
-      color: '#ffb03b',
+      color: '#5CC8E8',
       weight: 2,
       opacity: 0.95,
-      fillColor: '#ffb03b',
+      fillColor: '#5CC8E8',
       fillOpacity: 0.14,
       interactive: false
     }).addTo(vrstvaZony);
@@ -521,7 +521,7 @@
       L.circleMarker([p.lat, p.lon], {
         className: 'ray-end',
         radius: 2,
-        color: '#ffb03b',
+        color: '#5CC8E8',
         weight: 1,
         opacity: 0.6,
         fill: false,

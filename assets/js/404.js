@@ -8,6 +8,7 @@
   var pttButton = document.getElementById('ptt-button');
   var pttResponse = document.getElementById('ptt-response');
   var connection = document.getElementById('connection');
+  var spectrogram = document.getElementById('spectrogram');
   var target = 612;
   var messages = [
     'Jste mimo dosah. Signál se tváří, že nikdy neexistoval.',
@@ -23,7 +24,30 @@
     'Ticho na kanálu. Buď je prázdný, nebo všichni poslouchají.'
   ];
 
-  if (!slider || !value || !message || !displayNoise || !connection || !pttButton || !pttResponse) return;
+  if (!slider || !value || !message || !displayNoise || !connection || !pttButton || !pttResponse || !spectrogram) return;
+
+  var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var barCount = 64;
+  var bars = [];
+  for (var barIndex = 0; barIndex < barCount; barIndex++) {
+    var bar = document.createElement('span');
+    bar.className = 'spectrogram-bar';
+    bar.style.setProperty('--bar-index', String(barIndex));
+    spectrogram.appendChild(bar);
+    bars.push(bar);
+  }
+
+  function renderSpectrum(time) {
+    for (var i = 0; i < bars.length; i++) {
+      var wave = Math.sin(i * 0.48 + time * 0.0012) * 0.18;
+      var pulse = Math.sin(i * 0.13 - time * 0.0007) * 0.12;
+      var noise = ((i * 17) % 11) / 100;
+      var level = Math.max(0.08, 0.24 + wave + pulse + noise);
+      bars[i].style.setProperty('--level', level.toFixed(3));
+    }
+    if (!reducedMotion) window.requestAnimationFrame(renderSpectrum);
+  }
+  renderSpectrum(0);
 
   message.textContent = messages[Math.floor(Math.random() * messages.length)];
   connection.hidden = false;

@@ -5,7 +5,18 @@
   overflow-x: hidden;
   background:
     radial-gradient(circle at 12% 15%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 28rem),
+    radial-gradient(circle at 88% 70%, color-mix(in srgb, var(--uhf) 10%, transparent), transparent 32rem),
     var(--bg);
+}
+.error-kicker,
+.radio-display,
+.error-copy,
+.tuning-panel,
+.connection-panel,
+.error-actions,
+.no-script-note {
+  position: relative;
+  z-index: 1;
 }
 
 .error-shell {
@@ -24,6 +35,8 @@
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--text) 3%, transparent), transparent 45%),
     var(--panel);
+  isolation: isolate;
+  overflow: hidden;
 }
 
 .error-console::before,
@@ -59,6 +72,52 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+.spectrogram {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: end;
+  gap: 0.2rem;
+  padding: 1.5rem;
+  opacity: 0.42;
+  background:
+    linear-gradient(180deg, transparent 0 49%, color-mix(in srgb, var(--accent) 12%, transparent) 50%, transparent 51%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 5%, transparent), transparent);
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+.spectrogram-bar {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0.15rem;
+  height: 100%;
+  transform: scaleY(var(--level, 0.2));
+  transform-origin: bottom;
+  background: linear-gradient(180deg, var(--pmr), var(--accent) 45%, var(--uhf));
+  opacity: calc(0.28 + var(--level, 0.2));
+  animation: spectrum-glow 2.6s ease-in-out infinite alternate;
+  animation-delay: calc(var(--bar-index) * -0.07s);
+}
+.error-signal-icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  width: 5rem;
+  height: 3.5rem;
+  color: var(--accent);
+  opacity: 0.8;
+  z-index: 2;
+  animation: signal-pulse 3.8s ease-in-out infinite;
+}
+.error-signal-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
 }
 
 .radio-display {
@@ -152,6 +211,9 @@
   min-height: 1.6em;
   color: var(--text);
 }
+.error-copy .error-link-primary {
+  margin-top: 1rem;
+}
 
 .tuning-panel,
 .connection-panel,
@@ -239,6 +301,11 @@
   background: var(--sos);
   color: var(--bg);
 }
+.error-link-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
 
 .error-actions {
   display: flex;
@@ -275,6 +342,10 @@
   93% { opacity: 0.72; }
   94% { opacity: 1; }
 }
+@keyframes spectrum-glow {
+  from { filter: brightness(0.75); }
+  to { filter: brightness(1.25); }
+}
 
 @media (max-width: 720px) {
   .error-console {
@@ -288,7 +359,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .radio-display::after,
-  .radio-display-code {
+  .radio-display-code,
+  .error-signal-icon,
+  .spectrogram-bar {
     animation: none;
   }
 }

@@ -17,6 +17,8 @@
   <main class="error-shell">
     <section class="error-console" aria-labelledby="error-title">
       <p class="error-kicker">Radiocom / nouzový příjem</p>
+      <div class="error-signal-icon" aria-hidden="true"><svg viewBox="0 0 120 80"><path d="M60 59V18"></path><path d="m60 18-8 11h16z"></path><path d="M38 34c-9 9-9 20 0 29M82 34c9 9 9 20 0 29"></path><circle cx="60" cy="61" r="5"></circle></svg></div>
+      <div class="spectrogram" id="spectrogram" aria-hidden="true"></div>
       <div class="radio-display" aria-label="Chybový kód 404">
         <span class="radio-display-noise" aria-hidden="true"></span>
         <span class="radio-display-code">404</span>
@@ -25,12 +27,12 @@
 
       <div class="error-copy">
         <h1 id="error-title">Kanál 404 je prázdný</h1>
-        <p class="radio-dialog">Radiocom volá stránku. Příjem?</p>
-        <p class="radio-dialog radio-dialog-response">…</p>
-        <p class="radio-dialog">Stránka neodpovídá. Zkusíme jiný kanál.</p>
+        <p class="radio-dialog">Na této frekvenci nic není.</p>
+        <p class="radio-dialog radio-dialog-response">Zkuste se vrátit na domluvenou frekvenci.</p>
         <p id="radio-message" class="radio-message" aria-live="polite">
-          Jste mimo dosah. Signál se tváří, že nikdy neexistoval.
+          Signál je prázdný. Vraťte se na přehled domluvených kanálů.
         </p>
+        <a class="error-link error-link-primary" href="/radiocom/#kanaly">Zpět na domluvenou frekvenci</a>
       </div>
 
       <div class="tuning-panel">
@@ -39,7 +41,7 @@
           <output id="channel-value" for="channel-tuning">404 / 800</output>
         </div>
         <input id="channel-tuning" type="range" min="0" max="800" value="404" aria-describedby="tuning-help">
-        <p id="tuning-help">Otáčejte laděním. Správná frekvence je podezřele blízko.</p>
+        <p id="tuning-help">Otáčejte laděním. Když najdete signál, objeví se potvrzení spojení.</p>
       </div>
 
       <div id="connection" class="connection-panel">

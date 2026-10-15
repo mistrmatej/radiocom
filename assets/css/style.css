@@ -4,7 +4,7 @@
   --border: #2A3338;
   --text: #E8E6DF;
   --muted: #8E9A94;
-  --accent: #FFB000;
+  --accent: #5CC8E8;
   --pmr: #7FBF6A;
   --vhf: #C9D86B;
   --uhf: #5FB3D9;
@@ -209,6 +209,29 @@ button:hover { outline: 2px solid var(--accent); outline-offset: 2px; }
   padding: clamp(4rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 4.5rem);
   border-bottom: 1px solid var(--border);
 }
+.hero-copy { position: relative; }
+.signal-icon {
+  width: 9rem;
+  height: 5.5rem;
+  margin: -1rem 0 0.3rem;
+  color: var(--accent);
+  opacity: 0.85;
+  transform-origin: 50% 80%;
+  animation: signal-pulse 3.8s ease-in-out infinite;
+}
+.signal-icon svg,
+.step-icon svg,
+.page-signal-icon svg,
+.card-signal-icon svg,
+.print-signal-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
 .hero-inner {
   display: grid;
   grid-template-columns: 1.5fr 0.9fr;
@@ -362,8 +385,27 @@ h3 {
   gap: 1.5rem;
 }
 .step {
+  position: relative;
+  overflow: hidden;
   padding: 1.5rem 1.25rem;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
+.step:hover {
+  transform: translateY(-0.3rem);
+  border-color: color-mix(in srgb, var(--accent) 65%, var(--border));
+}
+.step-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  color: var(--accent);
+  opacity: 0.7;
+  animation: icon-float 3.4s ease-in-out infinite;
+}
+.step:nth-child(2) .step-icon { color: var(--pmr); animation-delay: -0.8s; }
+.step:nth-child(3) .step-icon { color: var(--uhf); animation-delay: -1.6s; }
 .step-number {
   width: 2.2rem;
   height: 2.2rem;
@@ -448,34 +490,37 @@ h3 {
   border-color: var(--accent);
   color: var(--bg);
 }
-.copy-frequency {
-  margin-left: 0.45rem;
-  padding: 0.18rem 0.38rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: transparent;
-  color: var(--accent);
-  cursor: pointer;
-  font-size: 0.68rem;
-  white-space: nowrap;
+.copy-row {
+  cursor: copy;
+  transition: background 0.18s ease, box-shadow 0.18s ease;
 }
-.copy-frequency:hover,
-.copy-frequency.is-copied {
-  border-color: var(--pmr);
-  color: var(--pmr);
+.copy-row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.copy-row:hover,
+.copy-row.is-copied {
+  background: color-mix(in srgb, var(--panel) 78%, var(--accent));
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.copy-row.copy-failed {
+  background: color-mix(in srgb, var(--panel) 78%, var(--sos));
+  box-shadow: inset 3px 0 0 var(--sos);
 }
 .is-hidden { display: none; }
 .channels-grid {
   display: grid;
   grid-template-columns: 1.35fr 1fr 1fr;
   gap: 1.5rem;
-  align-items: start;
+  align-items: stretch;
 }
 .channel-panel {
   min-width: 0;
   padding: 1.25rem;
   scroll-margin-top: 90px;
   border-top: 4px solid var(--accent);
+  display: flex;
+  flex-direction: column;
 }
 .channel-panel#pmr446 { border-top-color: var(--pmr); }
 .channel-panel#uhf { border-top-color: var(--uhf); }
@@ -489,6 +534,7 @@ h3 {
 .channel-panel .table-wrap {
   overflow: hidden;
   border-radius: 12px;
+  flex: 1;
 }
 .pmr-grid { display: block; }
 .channel-panel h3 {
@@ -498,6 +544,9 @@ h3 {
 .channel-panel .panel-sub {
   margin-bottom: 1rem;
   font-size: 0.92rem;
+}
+.channel-panel .panel-sub + .band-licence-note {
+  margin-top: -0.45rem;
 }
 .band-licence-note {
   margin: -0.2rem 0 0.75rem;
@@ -548,6 +597,45 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   font-weight: 700;
   white-space: nowrap;
 }
+.chan-table td:nth-child(2),
+.chan-table td:nth-child(4) {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+.chan-table td:nth-child(3) {
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  font-weight: 700;
+  font-variant-numeric: normal;
+  letter-spacing: normal;
+}
+.channel-panel:not(#pmr446) .chan-table td:nth-child(2) {
+  font-weight: 700;
+}
+.channel-panel .chan-table {
+  table-layout: fixed;
+}
+.channel-panel .chan-table td:nth-child(2) > span,
+.channel-panel .chan-table td:nth-child(4) > span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.channel-panel:not(#pmr446) .chan-table th:nth-child(1),
+.channel-panel:not(#pmr446) .chan-table td:nth-child(1) {
+  width: 22%;
+}
+.channel-panel:not(#pmr446) .chan-table th:nth-child(2),
+.channel-panel:not(#pmr446) .chan-table td:nth-child(2) {
+  width: 53%;
+}
+.channel-panel:not(#pmr446) .chan-table th:nth-child(3),
+.channel-panel:not(#pmr446) .chan-table td:nth-child(3) {
+  width: 25%;
+}
 #pmr-channel-table {
   width: 100%;
   table-layout: fixed;
@@ -568,7 +656,7 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
 #pmr-channel-table td:nth-child(2),
 #pmr-channel-table th:nth-child(4),
 #pmr-channel-table td:nth-child(4) {
-  width: 36%;
+  width: 34%;
 }
 #pmr-channel-table th:nth-child(3),
 #pmr-channel-table td:nth-child(3) {
@@ -660,6 +748,24 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
 @keyframes icon-sway {
   0%, 100% { transform: rotate(-2deg); }
   50% { transform: rotate(2deg); }
+}
+@keyframes signal-pulse {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.72; }
+  50% { transform: translateY(-0.35rem) scale(1.04); opacity: 1; }
+}
+.hero-panel {
+  animation: panel-arrive 0.7s ease-out both;
+}
+.hero-panel .quick-link {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.hero-panel .quick-link:hover {
+  transform: translateX(0.35rem);
+  background: color-mix(in srgb, var(--panel) 75%, var(--accent));
+}
+@keyframes panel-arrive {
+  from { opacity: 0; transform: translateY(0.8rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .band-note {
   color: var(--muted);
@@ -785,7 +891,10 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
     transition-duration: 0.01ms !important;
   }
   .band-icon,
-  .band-icon-city i { animation: none; }
+  .band-icon-city i,
+  .signal-icon,
+  .step-icon,
+  .hero-panel { animation: none; }
 }
 
 .site-footer {
@@ -827,6 +936,79 @@ tbody tr:hover { background: color-mix(in srgb, var(--panel) 88%, var(--accent))
   .channels-grid { grid-template-columns: 1fr; }
   .band-visual { grid-template-columns: 1fr; }
   .hero { padding-top: 3rem; }
+  .signal-icon { width: 7rem; height: 4.5rem; }
+  .hero-copy { max-width: 38rem; }
+  .hero-actions .btn { flex: 1 1 10rem; }
+  .channel-panel { padding: 1rem; }
+  .channel-panel .table-wrap {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+  }
+  .band-table {
+    display: block;
+  }
+  .band-table thead {
+    display: none;
+  }
+  .band-table tbody,
+  .band-table tr,
+  .band-table td {
+    display: block;
+  }
+  .band-table tbody tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: 0.7rem 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .band-table tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .band-table tbody td {
+    padding: 0;
+    border: 0;
+    white-space: normal;
+    min-width: 0;
+  }
+  .band-table tbody td::before {
+    display: block;
+    margin-bottom: 0.18rem;
+    color: var(--muted);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .band-table tbody td:nth-child(1)::before,
+  .band-table tbody td:nth-child(3)::before {
+    content: "Kanál";
+  }
+  .band-table tbody td:nth-child(2)::before {
+    content: "Frekvence";
+  }
+  .band-table tbody td:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+  .band-table tbody td:nth-child(3)::before {
+    content: "Max. výkon";
+  }
+  #pmr-channel-table tbody tr {
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr) minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: 0.6rem;
+  }
+  #pmr-channel-table tbody td:nth-child(3) {
+    grid-column: auto;
+  }
+  #pmr-channel-table tbody td:nth-child(4)::before {
+    content: "Frekvence";
+  }
+  #pmr-channel-table tbody td:nth-child(3)::before {
+    content: "Kanál";
+  }
   .mobile-sos {
     position: fixed;
     right: 1rem;

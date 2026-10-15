@@ -4,18 +4,28 @@ import { formatMHz, pmrChannels, uhfChannels, vhfChannels } from './channels-dat
 
 const projectRoot = fileURLToPath(new URL('..', import.meta.url));
 
+function chirpRow(location, name, frequency, comment) {
+  const normalizedFrequency = String(frequency).replace(',', '.');
+  return `${location},${name},${normalizedFrequency},,0.000000,,,,,NN,FM,12.50,,${comment}`;
+}
+
 function pmrRows() {
-  const frequencyCell = frequency => `<td><span>${formatMHz(frequency)}</span><button class="copy-frequency" type="button" data-copy-frequency="${formatMHz(frequency)} MHz">Kopírovat</button></td>`;
+  const frequencyCell = (frequency) => {
+    const displayFrequency = formatMHz(frequency);
+    return `<td><span>${displayFrequency}</span></td>`;
+  };
   return Array.from({ length: 8 }, (_, index) => {
     const first = pmrChannels[index];
     const second = pmrChannels[index + 8];
-    return `<tr><td>${first.name}</td>${frequencyCell(first.frequency)}<td>${second.name}</td>${frequencyCell(second.frequency)}</tr>`;
+    const firstCsv = chirpRow(first.name, `PMR${first.name}`, formatMHz(first.frequency), 'PMR446');
+    const secondCsv = chirpRow(second.name, `PMR${second.name}`, formatMHz(second.frequency), 'PMR446');
+    return `<tr class="copy-row" tabindex="0" aria-label="Kopírovat PMR${first.name} a PMR${second.name} jako CSV" data-copy-frequency="${firstCsv}" data-copy-frequency-secondary="${secondCsv}"><td>${first.name}</td>${frequencyCell(first.frequency)}<td>${second.name}</td>${frequencyCell(second.frequency)}</tr>`;
   }).join('\n          ');
 }
 
 function channelRows(channels) {
-  return channels.map(([name, frequency, power]) =>
-    `<tr><td>${name}</td><td><span>${frequency} MHz</span><button class="copy-frequency" type="button" data-copy-frequency="${frequency} MHz">Kopírovat</button></td><td>${power}</td></tr>`
+  return channels.map(([name, frequency, power], index) =>
+    `<tr class="copy-row" tabindex="0" aria-label="Kopírovat ${name} jako CSV" data-copy-frequency="${chirpRow(index + 1, name, frequency, name.startsWith('UHF') ? 'UHF' : 'VHF')}"><td>${name}</td><td><span>${frequency} MHz</span></td><td>${power}</td></tr>`
   ).join('\n          ');
 }
 

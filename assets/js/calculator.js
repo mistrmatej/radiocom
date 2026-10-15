@@ -335,8 +335,8 @@
     }
 
     var s = '<defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">' +
-      '<stop offset="0%" stop-color="#ffb03b" stop-opacity="0.30"/>' +
-      '<stop offset="100%" stop-color="#ffb03b" stop-opacity="0.02"/></linearGradient></defs>';
+      '<stop offset="0%" stop-color="#5CC8E8" stop-opacity="0.30"/>' +
+      '<stop offset="100%" stop-color="#5CC8E8" stop-opacity="0.02"/></linearGradient></defs>';
 
     // mřížka
     var ticks = [0, -20, -40, -60, -80, -100, -120, -140];
