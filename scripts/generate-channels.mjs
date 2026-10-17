@@ -34,7 +34,10 @@ function printRows(channels) {
     const [name, frequency, power] = Array.isArray(channel)
       ? [channel[0], `${channel[1]} MHz`, channel[2]]
       : [channel.name, `${formatMHz(channel.frequency)} MHz`, '0,5 W'];
-    return `<tr><td>${name}</td><td>${frequency}</td>${power ? `<td>${power}</td>` : ''}</tr>`;
+    const band = Array.isArray(channel)
+      ? name.startsWith('UHF') ? 'UHF' : 'VHF'
+      : 'PMR446';
+    return `<tr><td>${band}</td><td>${name}</td><td>${frequency}</td><td>${power}</td></tr>`;
   }).join('\n          ');
 }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'radiocom-v4';
+const CACHE_NAME = 'radiocom-v5';
 const APP_SHELL = [
   './',
   './404.html',
@@ -53,6 +53,16 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   if (event.request.method !== 'GET') return;
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        return response;
+      }).catch(() => caches.match(event.request).then(cached => cached || caches.match('./404.html')))
+    );
+    return;
+  }
   event.respondWith(
     caches.match(event.request).then(cached => {
       if (cached) return cached;
